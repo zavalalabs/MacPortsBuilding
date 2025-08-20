@@ -3,16 +3,12 @@ set -euo pipefail
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 LIST_FILE="${1:-macports.txt}"
-
-# Ensure noninteractive, always build archives
-# macports.conf defaults to build archives on install; we explicitly run archive.
-# Variants in macports.txt will be honored.
 mapfile -t PORTS < <(grep -vE '^\s*(#|$)' "${LIST_FILE}")
 
-# Pre-fetch & build archives without failing the whole job if one port fails
 mkdir -p artifacts/archives
 FAILED=()
 
+# Build binary archives (.tbz2) without prompting
 for p in "${PORTS[@]}"; do
   echo "=== Archiving: $p ==="
   if ! sudo port -N -k archive $p; then
@@ -21,12 +17,11 @@ for p in "${PORTS[@]}"; do
   fi
 done
 
-# Copy produced archives out of the MacPorts software dir
-# Structure: /opt/local/var/macports/software/<port>/*.tbz2
-SOFTWARE_DIR="/opt/local/var/macports/software"
-rsync -a --prune-empty-dirs --include='*/' --include='*.tbz2' --exclude='*' "$SOFTWARE_DIR/" artifacts/archives/
+# Collect archives from MacPorts software dir
+SOFTDIR="/opt/local/var/macports/software"
+rsync -a --prune-empty-dirs --include='*/' --include='*.tbz2' --exclude='*' "$SOFTDIR/" artifacts/archives/
 
-# Write a manifest describing OS/arch and list
+# Manifest
 OS_VERSION="$(sw_vers -productVersion)"
 ARCH="$(uname -m)"
 {
@@ -37,5 +32,4 @@ ARCH="$(uname -m)"
   printf 'failed: %s\n' "${FAILED[*]:-}"
 } > artifacts/archives/manifest.txt
 
-# Useful for clients: a simple install list
 printf '%s\n' "${PORTS[@]}" > artifacts/archives/install-list.txt
