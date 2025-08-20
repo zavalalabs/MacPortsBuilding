@@ -1,0 +1,47 @@
+name: Build MacPorts Binaries (arm64)
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "macports.txt"
+      - "scripts/**"
+      - ".github/workflows/build-macports-arm64.yml"
+
+jobs:
+  build-arm64:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, macos-15]   # Apple silicon runners on 14/15
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bootstrap MacPorts (arm64)
+        env:
+          # Optionally pin a different MacPorts pkg per OS via env var
+          # MACPORTS_PKG_URL: https://...
+        run: bash scripts/bootstrap_macports.sh
+
+      - name: Build binary archives
+        run: bash scripts/build_archives.sh macports.txt
+
+      - name: Upload archives
+        uses: actions/upload-artifact@v4
+        with:
+          name: macports-archives-${{ matrix.os }}-arm64
+          path: artifacts/archives
+
+      # Enable if you also want installable pkgs/mpkgs
+      - name: (Optional) Build installer pkgs
+        if: ${{ false }}
+        run: bash scripts/build_pkgs.sh macports.txt
+
+      - name: (Optional) Upload pkgs
+        if: ${{ false }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: macports-pkgs-${{ matrix.os }}-arm64
+          path: artifacts/pkgs
