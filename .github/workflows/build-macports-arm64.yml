@@ -1,4 +1,4 @@
-name: Build MacPorts Binaries (arm64)
+name: Build MacPorts Binaries
 
 on:
   workflow_dispatch:
