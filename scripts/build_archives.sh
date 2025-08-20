@@ -3,23 +3,32 @@ set -euo pipefail
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 LIST_FILE="${1:-macports.txt}"
-mapfile -t PORTS < <(grep -vE '^\s*(#|$)' "${LIST_FILE}")
 
 mkdir -p artifacts/archives
 FAILED=()
+SUCCESS=0
 
-# Build binary archives (.tbz2) without prompting
-for p in "${PORTS[@]}"; do
-  echo "=== Archiving: $p ==="
-  if ! sudo port -N -k archive $p; then
-    echo "FAILED: $p"
-    FAILED+=("$p")
+# Iterate lines safely; skip blanks and comments
+while IFS= read -r line || [ -n "${line:-}" ]; do
+  # trim
+  port="${line#"${line%%[![:space:]]*}"}"
+  port="${port%"${port##*[![:space:]]}"}"
+  # skip empty or comment
+  [ -z "$port" ] && continue
+  case "$port" in \#*) continue ;; esac
+
+  echo "=== Archiving: $port ==="
+  if sudo port -N -k archive $port; then
+    SUCCESS=$((SUCCESS+1))
+  else
+    echo "FAILED: $port"
+    FAILED+=("$port")
   fi
-done
+done < "$LIST_FILE"
 
-# Collect archives from MacPorts software dir
-SOFTDIR="/opt/local/var/macports/software"
-rsync -a --prune-empty-dirs --include='*/' --include='*.tbz2' --exclude='*' "$SOFTDIR/" artifacts/archives/
+# Collect produced archives (flatten into artifacts/archives)
+SOFTWARE_DIR="/opt/local/var/macports/software"
+find "$SOFTWARE_DIR" -type f -name '*.tbz2' -print0 | xargs -0 -I{} cp {} artifacts/archives/
 
 # Manifest
 OS_VERSION="$(sw_vers -productVersion)"
@@ -27,9 +36,13 @@ ARCH="$(uname -m)"
 {
   echo "os: ${OS_VERSION}"
   echo "arch: ${ARCH}"
-  echo "ports_count: ${#PORTS[@]}"
+  echo "ports_success: ${SUCCESS}"
   echo "failed_count: ${#FAILED[@]}"
-  printf 'failed: %s\n' "${FAILED[*]:-}"
+  if [ "${#FAILED[@]}" -gt 0 ]; then
+    printf 'failed: %s\n' "${FAILED[@]}"
+  fi
 } > artifacts/archives/manifest.txt
 
-printf '%s\n' "${PORTS[@]}" > artifacts/archives/install-list.txt
+# Save the cleaned list we actually tried
+# (same filter logic as loop)
+awk '!/^[[:space:]]*($|#)/' "$LIST_FILE" > artifacts/archives/install-list.txt
