@@ -1,4 +1,4 @@
-name: Build MacPorts Binaries
+name: Build MacPorts Binaries - arm64
 
 on:
   workflow_dispatch:
@@ -13,16 +13,27 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, macos-15]   # Apple silicon runners on 14/15
+        os: [macos-14, macos-15]
     runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: Sanity (print runner info)
+        run: |
+          echo "Runner: ${{ matrix.os }}"
+          uname -a
+          sw_vers
+          arch
+          sysctl -n hw.ncpu
+
+      - name: Make scripts executable (defensive)
+        run: |
+          chmod +x scripts/bootstrap_macports.sh
+          chmod +x scripts/build_archives.sh
+          chmod +x scripts/build_pkgs.sh || true
+
       - name: Bootstrap MacPorts (arm64)
-        env:
-          # Optionally pin a different MacPorts pkg per OS via env var
-          # MACPORTS_PKG_URL: https://...
         run: bash scripts/bootstrap_macports.sh
 
       - name: Build binary archives
@@ -33,15 +44,3 @@ jobs:
         with:
           name: macports-archives-${{ matrix.os }}-arm64
           path: artifacts/archives
-
-      # Enable if you also want installable pkgs/mpkgs
-      - name: (Optional) Build installer pkgs
-        if: ${{ false }}
-        run: bash scripts/build_pkgs.sh macports.txt
-
-      - name: (Optional) Upload pkgs
-        if: ${{ false }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: macports-pkgs-${{ matrix.os }}-arm64
-          path: artifacts/pkgs
