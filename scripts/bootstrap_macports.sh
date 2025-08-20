@@ -1,31 +1,32 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Expect macOS version like 12/13/14 and arch like arm64/x86_64
+# Hard-stop if we’re not on Apple silicon
+[[ "$(uname -m)" == "arm64" ]] || { echo "This workflow is arm64-only."; exit 1; }
+
 MACOS_MAJOR="$(sw_vers -productVersion | awk -F. '{print $1}')"
-ARCH="$(uname -m)"
+ARCH="arm64"
+echo "Detected macOS $MACOS_MAJOR ($ARCH)"
 
-echo "macOS major: $MACOS_MAJOR arch: $ARCH"
-
-# Install Xcode CLT (needed by MacPorts even for archive creation)
+# Xcode CLT (should already exist on GH runners, safe to noop)
 if ! xcode-select -p >/dev/null 2>&1; then
   sudo xcode-select --install || true
-  # On CI this can already be present; no-op is fine.
 fi
 
-# Install MacPorts via pkg (adjust URL if needed per macOS version/arch)
-# You can pin to a specific MacPorts release to keep builds reproducible.
-PKG_URL=""
-case "${MACOS_MAJOR}-${ARCH}" in
-  12-x86_64) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.8.1/MacPorts-2.8.1-12-Monterey.pkg" ;;
-  13-x86_64) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.8.1/MacPorts-2.8.1-13-Ventura.pkg" ;;
-  13-arm64)  PKG_URL="https://github.com/macports/macports-base/releases/download/v2.8.1/MacPorts-2.8.1-13-Ventura-arm64.pkg" ;;
-  14-x86_64) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.8.1/MacPorts-2.8.1-14-Sonoma.pkg" ;;
-  14-arm64)  PKG_URL="https://github.com/macports/macports-base/releases/download/v2.8.1/MacPorts-2.8.1-14-Sonoma-arm64.pkg" ;;
-  *) echo "Define PKG_URL mapping for ${MACOS_MAJOR}-${ARCH}" ; exit 1 ;;
-esac
+# Install MacPorts (arm64) via pkg.
+# Tip: keep this mapping updated for the MacPorts version you pin.
+# You can also inject MACPORTS_PKG_URL via env to override.
+PKG_URL="${MACPORTS_PKG_URL:-}"
 
-echo "Downloading MacPorts pkg: $PKG_URL"
+if [[ -z "${PKG_URL}" ]]; then
+  case "${MACOS_MAJOR}" in
+    14) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.9.3/MacPorts-2.9.3-14-Sonoma-arm64.pkg" ;;
+    15) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.9.3/MacPorts-2.9.3-15-Sequoia-arm64.pkg" ;;
+    *) echo "Add a MacPorts pkg URL mapping for macOS ${MACOS_MAJOR} (arm64)"; exit 1 ;;
+  esac
+fi
+
+echo "Installing MacPorts from: $PKG_URL"
 curl -fsSL "$PKG_URL" -o /tmp/macports.pkg
 sudo installer -pkg /tmp/macports.pkg -target /
 
