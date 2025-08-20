@@ -1,0 +1,52 @@
+name: Build MacPorts Binaries
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "macports.txt"
+      - "scripts/**"
+      - ".github/workflows/build-macports.yml"
+
+jobs:
+  build:
+    # For Intel builds use: macos-12 or macos-13 (x86_64)
+    # For Apple Silicon, set up a self-hosted runner labeled 'macos-arm64'
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-13] # add 'macos-12', 'macos-14' as needed
+        include:
+          - runner: macos-13
+            runs-on: macos-13
+          # Example self-hosted Apple Silicon:
+          # - runner: macos-arm64
+          #   runs-on: [self-hosted, macOS, ARM64]
+
+    runs-on: ${{ matrix.runs-on }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Bootstrap MacPorts
+        run: bash scripts/bootstrap_macports.sh
+
+      - name: Build archives
+        run: bash scripts/build_archives.sh macports.txt
+
+      - name: (Optional) Build installer pkgs
+        if: ${{ false }} # flip to true when you want pkgs
+        run: bash scripts/build_pkgs.sh macports.txt
+
+      - name: Upload archives artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: macports-archives-${{ runner.os }}-${{ runner.arch || 'x86_64' }}
+          path: artifacts/archives
+
+      - name: Upload pkgs artifact
+        if: ${{ false }} # flip to true when building pkgs
+        uses: actions/upload-artifact@v4
+        with:
+          name: macports-pkgs-${{ runner.os }}-${{ runner.arch || 'x86_64' }}
+          path: artifacts/pkgs
