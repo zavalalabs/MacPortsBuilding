@@ -1,4 +1,4 @@
-name: Build MacPorts Binaries - arm64 Self-Hosted
+name: Build MacPorts Binaries - arm64
 
 on:
   workflow_dispatch:
@@ -13,12 +13,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # These must be labels you applied to your self-hosted runners,
-        # e.g. one runner labeled "macos-14" and another "macos-15"
+        # These must be labels on your self-hosted runners
         os_label: [macos-14, macos-15]
 
-    # Require a self-hosted macOS ARM64 runner with the matching OS label
-    runs-on: [self-hosted, macOS, ARM64, ${{ matrix.os_label }}]
+    runs-on:
+      - self-hosted
+      - macOS
+      - ARM64
+      - ${{ matrix.os_label }}
 
     steps:
       - name: Sanity (print runner info)
