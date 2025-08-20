@@ -1,4 +1,4 @@
-name: Build MacPorts Binaries - arm64
+name: Build MacPorts Binaries - arm64 Self-Hosted
 
 on:
   workflow_dispatch:
@@ -13,19 +13,32 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, macos-15]
-    runs-on: ${{ matrix.os }}
+        # These must be labels you applied to your self-hosted runners,
+        # e.g. one runner labeled "macos-14" and another "macos-15"
+        os_label: [macos-14, macos-15]
+
+    # Require a self-hosted macOS ARM64 runner with the matching OS label
+    runs-on: [self-hosted, macOS, ARM64, ${{ matrix.os_label }}]
 
     steps:
-      - uses: actions/checkout@v4
-
       - name: Sanity (print runner info)
         run: |
-          echo "Runner: ${{ matrix.os }}"
+          echo "Wanted labels: self-hosted macOS ARM64 ${{ matrix.os_label }}"
+          echo "runner.os=${{ runner.os }}"
+          echo "runner.arch=${{ runner.arch }}"
           uname -a
           sw_vers
           arch
           sysctl -n hw.ncpu
+
+      # Hard guard: fail if the wrong platform picks this up
+      - name: Assert correct OS/arch
+        if: ${{ runner.os != 'macOS' || runner.arch != 'ARM64' }}
+        run: |
+          echo "::error::This workflow must run on macOS ARM64. Got ${RUNNER_OS}/${RUNNER_ARCH}."
+          exit 1
+
+      - uses: actions/checkout@v4
 
       - name: Make scripts executable (defensive)
         run: |
@@ -42,5 +55,5 @@ jobs:
       - name: Upload archives
         uses: actions/upload-artifact@v4
         with:
-          name: macports-archives-${{ matrix.os }}-arm64
+          name: macports-archives-${{ matrix.os_label }}-arm64
           path: artifacts/archives
