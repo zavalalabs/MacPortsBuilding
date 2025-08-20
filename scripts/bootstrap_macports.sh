@@ -20,8 +20,8 @@ PKG_URL="${MACPORTS_PKG_URL:-}"
 
 if [[ -z "${PKG_URL}" ]]; then
   case "${MACOS_MAJOR}" in
-    14) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.9.3/MacPorts-2.9.3-14-Sonoma-arm64.pkg" ;;
-    15) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.9.3/MacPorts-2.9.3-15-Sequoia-arm64.pkg" ;;
+    14) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.10.5/MacPorts-2.10.5-14-Sonoma.pkg" ;;
+    15) PKG_URL="https://github.com/macports/macports-base/releases/download/v2.10.7/MacPorts-2.10.7-15-Sequoia.pkg" ;;
     *) echo "Add a MacPorts pkg URL mapping for macOS ${MACOS_MAJOR} (arm64)"; exit 1 ;;
   esac
 fi
