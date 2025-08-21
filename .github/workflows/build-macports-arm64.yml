@@ -31,7 +31,7 @@ jobs:
       - name: Bootstrap MacPorts (arm64)
         env:
           # Optionally pin a different MacPorts pkg:
-          # MACPORTS_PKG_URL: https://github.com/macports/macports-base/releases/download/v2.10.7/MacPorts-2.10.7-15-Sequoia.pkg
+           MACPORTS_PKG_URL: https://github.com/macports/macports-base/releases/download/v2.10.7/MacPorts-2.10.7-15-Sequoia.pkg
         run: bash scripts/bootstrap_macports.sh
 
       - name: Build binary archives
