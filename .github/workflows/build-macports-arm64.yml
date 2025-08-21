@@ -32,7 +32,7 @@ jobs:
         env:
           # Optionally pin a different MacPorts pkg:
            MACPORTS_PKG_URL: https://github.com/macports/macports-base/releases/download/v2.10.7/MacPorts-2.10.7-15-Sequoia.pkg
-        run: bash scripts/bootstrap_macports.sh
+        run: sudo bash scripts/bootstrap_macports.sh
 
       - name: Build binary archives
         run: bash scripts/build_archives.sh macports.txt
