@@ -1,598 +1,596 @@
-  aom @3.9.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:19-0600'
-  apr @1.7.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:22:55-0600'
-  apr-util @1.6.3_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:33-0600'
-  aquaterm @1.1.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:25-0600'
-  aspell @0.60.8.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:18:32-0600'
-  aspell-dict-en @2020.12.07-0_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:47:17-0600'
-  at-spi2-atk @2.38.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:36-0600'
-  at-spi2-core @2.44.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:34-0600'
-  atk @2.38.0_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:35-0600'
-  atkmm @2.36.3_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:35:38-0600'
-  atkmm-1.6 @2.28.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:35:37-0600'
-  autoconf @2.72_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:29:01-0600'
-  autoconf-archive @2023.02.20_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:29:01-0600'
-  automake @1.18.1_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:29:00-0600'
-  avahi @0.8_7+gtk3+python313+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:33-0600'
-  awscli_select @0.3_1 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:47:05-0600'
-  bash @5.2.37_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:55-0600'
-  bison @3.8.2_2 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:12:41-0600'
-  bison-runtime @3.8.2_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:50:29-0600'
-  blosc @1.21.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:17-0600'
-  boost176 @1.76.0_14+no_single+no_static (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:12-0600'
-  boost181 @1.81.0_13+no_single+no_static+python313 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:08-0600'
-  brotli @1.1.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:03-0600'
-  brunsli @0.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:27-0600'
-  byacc @20241231_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:35-0600'
-  bzip2 @1.0.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:38-0600'
-  cairo @1.17.6_2+quartz+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:54-0600'
-  cairomm @1.18.0_1+quartz+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:30-0600'
-  cairomm-1.0 @1.12.2_0+quartz+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:29-0600'
-  cctools @949.0.1_3+xcode (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:36:14-0600'
-  cdo @2.5.2_0+eccodes requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:52:42-0600'
-  cdo @2.5.3_0+eccodes (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:25:23-0600'
-  cdrtools @3.02-2024-03-21_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:17:00-0600'
-  charls @2.4.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:27-0600'
-  clang-19 @19.1.7_0+analyzer (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:43:56-0600'
-  clang-20 @20.1.8_0+analyzer (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:41:18-0600'
-  clang_select @2.4_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:36:15-0600'
-  cmake @3.31.7_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:26:54-0600'
-  coreutils @9.5_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:52-0600'
-  cunit @2.1-3_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:30:56-0600'
-  curl @8.13.0_0+brotli+http2+idn+psl+ssl+zstd (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:56-0600'
-  curl-ca-bundle @8.13.0_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:05:55-0600'
-  cyrus-sasl2 @2.1.28_1+kerberos (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:34-0600'
-  cython_select @0.1_2 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:03:27-0600'
-  dav1d @1.5.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:12-0600'
-  db48 @4.8.30_5 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:02:18-0600'
-  dbus @1.14.10_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:13:54-0600'
-  dbus-glib @0.112_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:30:58-0600'
-  dbus-python313 @1.3.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:30:58-0600'
-  dcw-gmt @2.2.0_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:26:35-0600'
-  djvulibre @3.5.28_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:37-0600'
-  docutils_select @0.2_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:45:50-0600'
-  dos2unix @7.5.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:18-0600'
-  double-conversion @3.3.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:13:54-0600'
-  doxygen @1.11.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:28-0600'
-  dsh @0.25.10_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:52-0600'
-  dvdrw-tools @7.1_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:17:01-0600'
-  dvipng @1.18_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:56-0600'
-  dvisvgm @3.5_0+mupdf requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:54-0600'
-  ecCodes @2.42.0_0+gfortran (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:48:50-0600'
-  enscript @1.6.6_0+mediaLetter (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:18:31-0600'
-  expat @2.7.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:45-0600'
-  facter @1.7.6_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T16:12:40-0600'
-  ffmpeg @4.4.6_1+gpl2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:48:33-0600'
-  fftw-3 @3.3.10_0+gfortran (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:56-0600'
-  fftw-3-single @3.3.10_0+gfortran (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:56-0600'
-  flac @1.5.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:34-0600'
-  flex @2.6.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:18:07-0600'
-  fontconfig @2.15.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:05-0600'
-  fortune @6.2.0-RELEASE_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:43:13-0600'
-  freetype @2.13.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:04-0600'
-  freexl @2.0.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:45-0600'
-  fribidi @1.0.16_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:58-0600'
-  gcc14 @14.2.0_3+stdlib_flag requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:50:01-0600'
-  gcc14-libcxx @14.2.0_3+clang18 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:31:02-0600'
-  gcc_select @0.1_10 requested_variants='' platform='darwin 24' archs='noarch' date='2025-08-14T15:47:07-0600'
-  gd2 @2.3.3_7+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:33-0600'
-  gdal @3.11.3_0+postgresql17 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:49-0600'
-  gdbm @1.26_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:55-0600'
-  gdk-pixbuf2 @2.42.12_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:08-0600'
-  geos @3.13.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:14-0600'
-  gettext @0.22.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:40-0600'
-  gettext-runtime @0.22.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:46-0600'
-  gettext-tools-libs @0.22.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:32-0600'
-  ghostscript @10.05.1_0+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:40-0600'
-  giflib @4.2.3_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:43-0600'
-  giflib5 @5.2.2_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:22:57-0600'
-  git @2.50.1_1+credential_osxkeychain+diff_highlight+doc+pcre+perl5_34 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:06-0600'
-  git @2.51.0_0+credential_osxkeychain+diff_highlight+doc+pcre+perl5_34 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:27:19-0600'
-  git-lfs @3.7.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:13-0600'
-  glib2 @2.78.4_2+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:51-0600'
-  glibmm @2.78.0_0+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:50-0600'
-  glibmm-2.4 @2.62.0_0+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:46-0600'
-  gmp @6.3.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:46-0600'
-  gmt6 @6.6.0_0+gdal+nonfree+pcre (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:25-0600'
-  gnupg2 @2.4.7_0+openldap+pinentry requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:49-0600'
-  gnupg2 @2.4.8_0+openldap+pinentry (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:21:28-0600'
-  gnuplot @6.0.3_2+aquaterm+luaterm+pangocairo+qt5+wxwidgets (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:47:05-0600'
-  gnutar @1.35_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:45-0600'
-  gnutls @3.7.11_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:40-0600'
-  gobject-introspection @1.78.1_5 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:02-0600'
-  googlecl @0.9.14_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:50:31-0600'
-  gpgme @1.24.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:50-0600'
-  grads @2.2.1_22 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:01-0600'
-  graphite2 @1.3.14_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:52-0600'
-  graphviz @12.2.1_0+pangocairo+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:30:55-0600'
-  gshhg-gmt @2.3.7_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:26:04-0600'
-  gsl @2.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:11-0600'
-  gsmartcontrol @1.1.4_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:33-0600'
-  gtk2 @2.24.33_5+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:18:26-0600'
-  gtk3 @3.24.49_1+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:35:34-0600'
-  gtkmm3 @3.24.9_1+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:36:14-0600'
-  gts @0.7.6-20121130_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:57-0600'
-  gumbo-parser @0.12.1_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:04-0600'
-  gv @3.7.4_6 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:49-0600'
-  gzip @1.14_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:02-0600'
-  harfbuzz @11.2.1_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:53-0600'
-  harfbuzz-icu @11.2.1_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:54-0600'
-  hdf4 @4.2.15_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:34-0600'
-  hdf5 @1.14.6_0+cxx+fortran+gfortran+hl (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:15-0600'
-  hicolor-icon-theme @0.18_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:32:31-0600'
-  highway @1.2.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:26-0600'
-  highway @1.3.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:25:27-0600'
-  icu @76.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:22-0600'
-  ImageMagick @6.9.13-21_0+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:50-0600'
-  imath @3.1.12_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:34-0600'
-  imlib2 @1.12.5_0+doc (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:28-0600'
-  inetutils @2.6_1+client (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:16-0600'
-  isl @0.24_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:15-0600'
-  iso-codes @4.7.0_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:35:19-0600'
-  jasper @4.2.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:36-0600'
-  jasper2 @2.0.33_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:18-0600'
-  jbig2dec @0.20_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:03-0600'
-  jbigkit @2.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:46-0600'
-  kerberos5 @1.21.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:33-0600'
-  kvazaar @2.3.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:44-0600'
-  lame @3.100_3+simd (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:23-0600'
-  latexdiff @1.3.4_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:37:57-0600'
-  latexmk @4.86a_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:37:58-0600'
-  lcdf-typetools @2.110_1+texlive requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:29-0600'
-  lcms2 @2.17_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:50-0600'
-  ld64 @3_6+ld64_xcode (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:36:15-0600'
-  ld64-xcode @2_6 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:36:15-0600'
-  leptonica @1.84.1_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:00-0600'
-  lerc @4.0.0_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:48-0600'
-  less @678_0+pcre (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:44-0600'
-  libaec @1.1.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:52-0600'
-  libarchive @3.8.1_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:22:56-0600'
-  libass @0.17.3_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:23-0600'
-  libassuan @2.5.7_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:02:55-0600'
-  libb2 @0.98.1_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:22:56-0600'
-  libbluray @1.3.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:08-0600'
-  libcaca @0.99.beta20_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:52-0600'
-  libcerf @3.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:20-0600'
-  libcomerr @1.47.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:33-0600'
-  libcxx @5.0.1_5 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:26:36-0600'
-  libdaemon @0.14_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:18-0600'
-  libdap @3.18.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:30-0600'
-  libde265 @1.0.15_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:20-0600'
-  libdeflate @1.22_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:48-0600'
-  libdshconfig @0.20.13_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:52-0600'
-  libedit @20250104-3.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:37-0600'
-  libelf @0.8.13_4 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:39-0600'
-  libepoxy @1.5.10_2+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:35:14-0600'
-  libevent @2.1.12_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:31-0600'
-  libfetch @9.0.0-RELEASE_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:33-0600'
-  libffi @3.4.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:38-0600'
-  libgcc @9.0_0 (active) requested_variants='' platform='any any' archs='arm64' date='2025-08-14T14:04:56-0600'
-  libgcc14 @14.2.0_3+stdlib_flag (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:54-0600'
-  libgcrypt @1.11.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:40-0600'
-  libgeotiff @1.7.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:01-0600'
-  libgpg-error @1.55_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:02:54-0600'
-  libheif @1.19.8_1+examples+kvazaar (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:13-0600'
-  libiconv @1.17_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:44-0600'
-  libid3tag @0.16.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:17-0600'
-  libidn @1.43_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:03-0600'
-  libidn2 @2.3.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:55-0600'
-  libjpeg-turbo @3.1.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:47-0600'
-  libjxl @0.11.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:27-0600'
-  libksba @1.6.7_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:40-0600'
-  libLASi @1.1.3_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:29:00-0600'
-  libmagic @5.46_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:01-0600'
-  libmodplug @0.8.9.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:25-0600'
-  libmpc @1.3.1_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:51-0600'
-  libnetpbm @11.10.05_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:48-0600'
-  libogg @1.3.5_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:59-0600'
-  libomp @20.1.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:38:57-0600'
-  libopus @1.5.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:22-0600'
-  libpaper @2.2.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:02-0600'
-  libpixman @0.46.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:53-0600'
-  libpng @1.6.50_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:50-0600'
-  libpsl @0.21.5-20240306_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:55-0600'
-  libraw @0.21.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:36-0600'
-  librsvg @2.58.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:47-0600'
-  librttopo @1.1.0_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:15-0600'
-  libsdl2 @2.32.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:20-0600'
-  libsigcxx2 @2.12.1_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:37-0600'
-  libsigcxx3 @3.6.0_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:37-0600'
-  libsndfile @1.2.2_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:35-0600'
-  libspectre @0.2.12_4 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:23-0600'
-  libtasn1 @4.20.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:39-0600'
-  libtextstyle @0.22.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:30-0600'
-  libtheora @1.1.1_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:22-0600'
-  libtool @2.5.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:36-0600'
-  libunistring @1.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:02:50-0600'
-  libunrar @7.1.8_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:14-0600'
-  libunrar @7.1.10_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:27:22-0600'
-  libusb @1.0.27_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:37-0600'
-  libusb-compat @0.1.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:38-0600'
-  libutf8proc @2.10.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:34-0600'
-  libvidstab @1.1.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:03-0600'
-  libvorbis @1.3.7_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:21-0600'
-  libvpx @1.15.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:00-0600'
-  libxkbcommon @1.7.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:33-0600'
-  libxkbcommon-x11 @1.7.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:33-0600'
-  libxml2 @2.13.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:25-0600'
-  libxslt @1.1.43_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:38-0600'
-  libyaml @0.2.5_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:58-0600'
-  libzip @1.11.4_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:58-0600'
-  libzzip @0.13.74_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:54-0600'
-  llvm-19 @19.1.7_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:34:47-0600'
-  llvm-20 @20.1.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:38:41-0600'
-  llvm_select @2_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:32:36-0600'
-  lmdb @0.9.33_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:33-0600'
-  lua @5.3.6_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:16-0600'
-  luametatex @2.11.07_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:35-0600'
-  lynx @2.9.2_0+ssl (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:36-0600'
-  lz4 @1.10.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:47-0600'
-  lzma @25.00_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:45-0600'
-  lzo2 @2.10_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:16-0600'
-  m4 @1.4.20_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:02-0600'
-  mc @4.8.33_0+slang2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:53-0600'
-  mesa @25.0.2_0+llvm (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:35:13-0600'
-  minizip @1.3.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:45-0600'
-  mpdecimal @4.0.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:26-0600'
-  mpfr @4.2.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:52-0600'
-  mpg123 @1.33.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:04-0600'
-  mupdf @1.24.2_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:45-0600'
-  mypy_select @0.1_1 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:44:25-0600'
-  ncplot @4.11.0_3 (active) requested_variants='' platform='any any' archs='arm64' date='2025-08-14T16:18:12-0600'
-  ncurses @6.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:51-0600'
-  ncview @2.1.11_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:30:57-0600'
-  neomutt @20240329_0+doc+gpgme+idn+mutt (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:18:10-0600'
-  netcdf @4.9.3_0+dap+netcdf4 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:17-0600'
-  netcdf-cxx @4.2_18 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:18:11-0600'
-  netpbm @11.10.05_0+x11 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:25-0600'
-  nettle @3.10_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:38-0600'
-  nghttp2 @1.66.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:55-0600'
-  npth @1.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:37-0600'
-  nspr @4.37_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:26-0600'
-  nss @3.114_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:31-0600'
-  nss @3.115_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:20:35-0600'
-  oniguruma6 @6.9.10_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:51-0600'
-  OpenBLAS @0.3.30_0+gcc14+lapack requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:58-0600'
-  opendetex @2.8.11_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:03-0600'
-  openexr @3.2.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:35-0600'
-  openh264 @2.6.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:46-0600'
-  openjpeg @2.5.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:50-0600'
-  openjpeg15 @1.5.2_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:48:40-0600'
-  openldap @2.6.10_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:36-0600'
-  openmotif @2.3.8_5 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:13-0600'
-  openspecfun @0.5.7_0+gcc14 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:20-0600'
-  openssh @10.0p2_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:51-0600'
-  openssl @3_25 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:47-0600'
-  openssl3 @3.5.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:42-0600'
-  openssl10 @1.0.2u_4 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:43:29-0600'
-  openssl11 @1.1.1w_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:32-0600'
-  orc @0.4.41_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:22-0600'
-  p5.34-algorithm-diff @1.201.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:57-0600'
-  p5.34-authen-sasl @2.190.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:45:39-0600'
-  p5.34-b-hooks-endofscope @0.280.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:35-0600'
-  p5.34-cgi @4.700.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:45:38-0600'
-  p5.34-class-data-inheritable @0.100.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:33-0600'
-  p5.34-class-method-modifiers @2.150.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:30-0600'
-  p5.34-class-xsaccessor @1.190.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:34-0600'
-  p5.34-clone @0.470.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:33-0600'
-  p5.34-clone-pp @1.80.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:32-0600'
-  p5.34-compress-raw-bzip2 @2.213.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:51-0600'
-  p5.34-compress-raw-zlib @2.213.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:51-0600'
-  p5.34-crypt-urandom @0.540.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:39-0600'
-  p5.34-data-dump @1.250.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:45:53-0600'
-  p5.34-data-dumper @2.183.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:52-0600'
-  p5.34-data-optlist @0.114.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:32-0600'
-  p5.34-dbd-csv @0.620.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:52-0600'
-  p5.34-dbd-sqlite @1.760.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:51-0600'
-  p5.34-dbi @1.647.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:48-0600'
-  p5.34-devel-globaldestruction @0.140.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:36-0600'
-  p5.34-devel-stacktrace @2.50.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:32-0600'
-  p5.34-digest-hmac @1.50.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:28:55-0600'
-  p5.34-digest-sha1 @2.130.0_4 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:55-0600'
-  p5.34-dist-checkconflicts @0.110.0_2 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:34-0600'
-  p5.34-encode @3.210.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:20-0600'
-  p5.34-encode-din66003 @0.50.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:30:57-0600'
-  p5.34-encode-eucjpascii @0.30.0_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:24-0600'
-  p5.34-encode-hanextra @0.230.0_6 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:21-0600'
-  p5.34-encode-iso2022 @0.40.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:23-0600'
-  p5.34-encode-jisx0213 @0.40.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:23-0600'
-  p5.34-encode-locale @1.50.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:52-0600'
-  p5.34-error @0.170.300_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:42:39-0600'
-  p5.34-eval-closure @0.140.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:32-0600'
-  p5.34-exception-class @1.450.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:33-0600'
-  p5.34-file-copy-recursive @0.450.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:46-0600'
-  p5.34-file-homedir @1.6.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:27:54-0600'
-  p5.34-file-listing @6.160.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:13-0600'
-  p5.34-file-which @1.270.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:36-0600'
-  p5.34-font-afm @1.200.0_2 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:26-0600'
-  p5.34-getopt-long @2.580.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:13-0600'
-  p5.34-gssapi @0.280.0_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:29-0600'
-  p5.34-html-form @6.120.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:12-0600'
-  p5.34-html-formatter @2.160.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:45-0600'
-  p5.34-html-parser @3.830.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:53-0600'
-  p5.34-html-tagset @3.240.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:53-0600'
-  p5.34-html-tree @5.70.0_1 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:31:03-0600'
-  p5.34-http-cookies @6.110.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:12-0600'
-  p5.34-http-daemon @6.160.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:47:00-0600'
-  p5.34-http-date @6.60.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:52-0600'
-  p5.34-http-message @7.0.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:53-0600'
-  p5.34-http-negotiate @6.10.0_1 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:11-0600'
-  p5.34-io-compress @2.213.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:52-0600'
-  p5.34-io-html @1.4.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:51-0600'
-  p5.34-io-socket-ip @0.430.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:44:51-0600'
-  p5.34-io-socket-ssl @2.95.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:08-0600'
-  p5.34-ipc-system-simple @1.300.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:44-0600'
-  p5.34-libwww-perl @6.790.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:18-0600'
-  p5.34-libxml-perl @0.80.0_4 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:47-0600'
-  p5.34-log-dispatch @2.710.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:36-0600'
-  p5.34-lwp-mediatypes @6.40.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:51-0600'
-  p5.34-lwp-protocol-https @6.140.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:29-0600'
-  p5.34-mac-systemdirectory @0.140.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:31:02-0600'
-  p5.34-math-base-convert @0.110.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:48-0600'
-  p5.34-math-complex @1.590.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:21-0600'
-  p5.34-mime-base32 @1.303.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:50-0600'
-  p5.34-mime-base64 @3.160.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:50-0600'
-  p5.34-mime-charset @1.013.1_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:24-0600'
-  p5.34-module-implementation @0.90.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:31-0600'
-  p5.34-module-load @0.360.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:47:17-0600'
-  p5.34-module-runtime @0.18.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:31-0600'
-  p5.34-mozilla-ca @20250602_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:29-0600'
-  p5.34-mro-compat @0.150.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:30-0600'
-  p5.34-namespace-autoclean @0.310.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:35-0600'
-  p5.34-namespace-clean @0.270.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:35-0600'
-  p5.34-net-http @6.230.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:10-0600'
-  p5.34-net-smtp-ssl @1.40.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:45:39-0600'
-  p5.34-net-ssleay @1.940.0_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:41:34-0600'
-  p5.34-package-stash @0.400.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:34-0600'
-  p5.34-package-stash-xs @0.300.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:34-0600'
-  p5.34-params-util @1.102.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:31-0600'
-  p5.34-params-validationcompiler @0.310.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:34-0600'
-  p5.34-parent @0.244.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:45-0600'
-  p5.34-pod2-base @0.43.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:23-0600'
-  p5.34-ref-util @0.204.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:30-0600'
-  p5.34-ref-util-xs @0.117.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:30-0600'
-  p5.34-regexp-ipv6 @0.30.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:49-0600'
-  p5.34-role-tiny @2.2.4_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:30-0600'
-  p5.34-scalar-list-utils @1.700.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:54:07-0600'
-  p5.34-scope-guard @0.210.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:36-0600'
-  p5.34-socket @2.40.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:50-0600'
-  p5.34-specio @0.520.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:33-0600'
-  p5.34-sql-statement @1.414.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:48-0600'
-  p5.34-sub-exporter @0.991.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:32-0600'
-  p5.34-sub-exporter-progressive @0.1.13_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:35-0600'
-  p5.34-sub-install @0.929.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:31-0600'
-  p5.34-sub-name @0.280.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:29-0600'
-  p5.34-sub-quote @2.6.8_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:30-0600'
-  p5.34-sys-syslog @0.360.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:29-0600'
-  p5.34-term-readkey @2.380.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:26-0600'
-  p5.34-test-fatal @0.17.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:29-0600'
-  p5.34-text-balanced @2.70.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:47-0600'
-  p5.34-text-csv_xs @1.610.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:52-0600'
-  p5.34-text-parsewords @3.310.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:44:50-0600'
-  p5.34-text-soundex @3.50.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:36-0600'
-  p5.34-time-local @1.350.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:51-0600'
-  p5.34-timedate @2.330.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:52-0600'
-  p5.34-tk @804.36.0_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:28-0600'
-  p5.34-try-tiny @0.320.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:29-0600'
-  p5.34-unicode-linebreak @2019.1.0_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:46-0600'
-  p5.34-uri @5.320.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:23:50-0600'
-  p5.34-variable-magic @0.640.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:35-0600'
-  p5.34-version @0.993.300_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:11-0600'
-  p5.34-www-mechanize @2.190.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:45-0600'
-  p5.34-www-robotrules @6.20.0_1 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:54:06-0600'
-  p5.34-xml-dom @1.460.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:47-0600'
-  p5.34-xml-parser @2.470.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:46-0600'
-  p5.34-xml-regexp @0.40.0_1 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:37:46-0600'
-  p5.34-xsloader @0.240.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:31-0600'
-  p5.34-xstring @0.5.0_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:29-0600'
-  p5.34-yaml-tiny @1.760.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:05:03-0600'
-  p11-kit @0.25.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:39-0600'
-  pango @1.55.0_0+quartz+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:59-0600'
-  pangomm @2.54.0_0+quartz+x11 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:31-0600'
-  pangomm-1.4 @2.46.4_0+quartz+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:36:12-0600'
-  pcre @8.45_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:54-0600'
-  pcre2 @10.45_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:39-0600'
-  pdfjam @4.2_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:37:56-0600'
-  perl5 @5.34.3_0+perl5_34 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:08:02-0600'
-  perl5.34 @5.34.3_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:02:45-0600'
-  pinentry @1.2.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:37-0600'
-  pip_select @0.1_3 (active) requested_variants='' platform='darwin 24' archs='noarch' date='2025-08-14T15:50:23-0600'
-  pkgconfig @0.29.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:13-0600'
-  plotutils @2.6_5 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:43-0600'
-  poppler @24.04.0_2+boost (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:51-0600'
-  poppler-data @0.4.12_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:09:30-0600'
-  popt @1.19_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:39-0600'
-  port_cutleaves @0.1.5_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:46:15-0600'
-  postgresql17 @17.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:09-0600'
-  postgresql_select @0.7_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:23:55-0600'
-  postgresql_select-17 @0.7_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:23:55-0600'
-  potrace @1.16_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:10:52-0600'
-  proctools @0.4pre1_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:38-0600'
-  proj @9.6.2_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:06:00-0600'
-  proj8 @8.2.1_1+tiff (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:06-0600'
-  proj9 @9.6.2_0+tiff (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:59-0600'
-  ps2eps @1.70_2 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:27-0600'
-  pssh-lilydjwg @2.3.5_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:13:53-0600'
-  pstoedit @4.01_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:44-0600'
-  pstree @2.40_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:43:14-0600'
-  psutils @p17_1 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:26-0600'
-  pth @2.0.7_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:50-0600'
-  pulseaudio @17.0_4+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:37-0600'
-  py27-cython @3.0.12_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:14-0600'
-  py27-cython-compat @0.29.37_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:54-0600'
-  py27-gdata @2.0.18_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:50:30-0600'
-  py27-numpy @1.16.6_4+gfortran (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:00-0600'
-  py27-oldest-supported-numpy @0.1_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:52-0600'
-  py27-pybind11 @2.4.3_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:05:12-0600'
-  py27-setuptools @44.1.1_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:04:10-0600'
-  py310-certifi @2025.8.3_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:42:29-0600'
-  py310-charset-normalizer @3.4.2_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:42:30-0600'
-  py310-curl @7.45.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:00-0600'
-  py310-idna @3.10_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:24-0600'
-  py310-mypy @1.17.1_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:31-0600'
-  py310-mypy_extensions @1.1.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:45:18-0600'
-  py310-numpy @1.26.4_3+accelerate+gfortran requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:45:48-0600'
-  py310-oldest-supported-numpy @0.1_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:45:38-0600'
-  py310-pathspec @0.12.1_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:46:55-0600'
-  py310-pip @25.1.1_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:50:27-0600'
-  py310-requests @2.32.4_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:42:30-0600'
-  py310-setuptools @80.9.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:20-0600'
-  py310-tomli @2.2.1_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:45:17-0600'
-  py310-typing_extensions @4.14.1_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:45:17-0600'
-  py310-urllib3 @2.5.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:42:30-0600'
-  py312-asn1 @0.6.1_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:19:02-0600'
-  py312-certifi @2025.8.3_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:44:50-0600'
-  py312-colorama @0.4.6_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:47:07-0600'
-  py312-docutils @0.21.2_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:45:52-0600'
-  py312-jmespath @1.0.1_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:08:28-0600'
-  py312-roman @5.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:45:50-0600'
-  py312-rsa @4.9_1 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:19:02-0600'
-  py312-six @1.17.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:28:58-0600'
-  py312-urllib3 @2.5.0_0 requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T15:42:33-0600'
-  py312-yaml @6.0.2_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:47:06-0600'
-  py313-cairo @1.28.0_0+quartz+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:30-0600'
-  py313-gdbm @3.13.6_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:31-0600'
-  py313-gdbm @3.13.7_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:25:41-0600'
-  py313-gobject3 @3.50.0_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:30-0600'
-  py313-mako @1.3.10_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:07:01-0600'
-  py313-markdown @3.8.2_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:07:00-0600'
-  py313-markupsafe @3.0.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:00-0600'
-  py313-setuptools @80.9.0_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:06:57-0600'
-  python2_select @0.1_0 (active) requested_variants='' platform='darwin 24' archs='noarch' date='2025-08-14T14:03:27-0600'
-  python3_select @0.1_0 (active) requested_variants='' platform='darwin 24' archs='noarch' date='2025-08-14T14:05:22-0600'
-  python3_select-310 @0.1_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:44:51-0600'
-  python3_select-311 @0.1_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:12:43-0600'
-  python3_select-312 @0.1_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:17:55-0600'
-  python3_select-313 @0.1_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:05:22-0600'
-  python27 @2.7.18_10+lto+optimizations (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:04:02-0600'
-  python310 @3.10.18_0+lto+optimizations (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:45:27-0600'
-  python311 @3.11.13_0+lto+optimizations (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:13:39-0600'
-  python312 @3.12.11_0+lto+optimizations (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:18:48-0600'
-  python313 @3.13.6_0+lto+optimizations requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:24-0600'
-  python313 @3.13.7_0+lto+optimizations (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:19:23-0600'
-  python_select @0.3_10 (active) requested_variants='' platform='darwin 24' archs='noarch' date='2025-08-14T14:03:27-0600'
-  python_select-310 @0.3_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:44:51-0600'
-  python_select-311 @0.3_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:12:44-0600'
-  python_select-312 @0.3_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:17:56-0600'
-  python_select-313 @0.3_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:05:22-0600'
-  qhull @2020.2_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:27-0600'
-  qt5-qtbase @5.15.15_2+openssl (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:14:09-0600'
-  qt5-qtdeclarative @5.15.15_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:17-0600'
-  qt5-qtsvg @5.15.15_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:12-0600'
-  qt5-qttools @5.15.15_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:24-0600'
-  R @4.5.1_0+aqua+builtin_lapack+cairo+gcc14+openmp+tcltk+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:43:23-0600'
-  readline @8.2.013_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:55-0600'
-  rsync @3.4.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:40-0600'
-  ruby @1.8.7-p374_15 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:45:11-0600'
-  ruby_select @1.3_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:42:39-0600'
-  serf1 @1.3.10_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:08:34-0600'
-  shapelib @1.6.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:54-0600'
-  shared-mime-info @2.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:56-0600'
-  slang2 @2.3.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:51-0600'
-  smake @1.7-2024-03-21_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:39-0600'
-  smartmontools @7.4_0+attributelog+savestates (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:31-0600'
-  snappy @1.2.2_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:17-0600'
-  soxr @0.1.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:17-0600'
-  spatialite @5.1.0_1+proj9 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:24:24-0600'
-  speex @1.2.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:59-0600'
-  speexdsp @1.2.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:59-0600'
-  sqlite3 @3.50.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:03:38-0600'
-  ssh-copy-id @10.0p2_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:04:37-0600'
-  subversion @1.14.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:38-0600'
-  svt-av1 @3.1.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:46-0600'
-  swig @4.3.1_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:46:54-0600'
-  swig-python @4.3.1_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:46:16-0600'
-  t1lib @5.1.2_3 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:55-0600'
-  t1utils @1.42_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:26-0600'
-  tcl @8.6.16_1+corefoundation+threads requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:40-0600'
-  tcl @8.6.17_0+corefoundation+threads (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:26:33-0600'
-  tcllib @1.21_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:50:22-0600'
-  tcp_wrappers @20_5 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:09:32-0600'
-  tesseract @5.4.1_4 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:04-0600'
-  texinfo @7.2_0+perl5_34 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:02:53-0600'
-  texlive-basic @74523_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:11:50-0600'
-  texlive-bibtex-extra @74417_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:40:10-0600'
-  texlive-bin @2025.74524_1+x11 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:11:17-0600'
-  texlive-common @2025_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:08:45-0600'
-  texlive-context @74403_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:27:30-0600'
-  texlive-fonts-extra @74512_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T16:40:19-0600'
-  texlive-fonts-recommended @68624_1+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:11:10-0600'
-  texlive-fontutils @74240_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:37:39-0600'
-  texlive-humanities @73810_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:51:18-0600'
-  texlive-lang-czechslovak @73908_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:17:32-0600'
-  texlive-lang-english @74022_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:36:29-0600'
-  texlive-lang-european @74115_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:30:55-0600'
-  texlive-lang-french @74301_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:22:22-0600'
-  texlive-lang-german @74226_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:46:25-0600'
-  texlive-lang-italian @73410_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:29:54-0600'
-  texlive-lang-polish @73410_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:29:01-0600'
-  texlive-lang-portuguese @74203_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:28:13-0600'
-  texlive-lang-spanish @73410_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:53:17-0600'
-  texlive-latex @74241_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:16:48-0600'
-  texlive-latex-extra @74512_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T16:11:09-0600'
-  texlive-latex-recommended @74487_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:23:05-0600'
-  texlive-luatex @74512_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:12:39-0600'
-  texlive-math-science @74462_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:13:44-0600'
-  texlive-metapost @74168_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:24:35-0600'
-  texlive-pictures @74487_0+doc (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:21:17-0600'
-  texlive-plain-generic @74472_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:14:33-0600'
-  texlive-tlpdb @2025.74524_0 requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:37:59-0600'
-  texlive-xetex @74520_0+doc requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:23:26-0600'
-  tiff @4.7.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:49-0600'
-  tk-x11 @8.6.16_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:43-0600'
-  tk-x11 @8.6.17_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-19T16:26:36-0600'
-  udunits @1.12.11_2 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:07:44-0600'
-  udunits2 @2.2.28_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:30:56-0600'
-  unzip @6.0_4 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:29-0600'
-  urw-fonts @1.0.7pre44_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:28:32-0600'
-  vala @0.56.18_0+valadoc (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:28-0600'
-  webp @1.5.0_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:43-0600'
-  wgrib2 @3.1.1_7+gfortran (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:27-0600'
-  woff2 @1.0.2_0 requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:53-0600'
-  wxWidgets-3.2 @3.2.8.1_2+compat30 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:46:18-0600'
-  wxWidgets-common @3.3.0_0 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:46:16-0600'
-  wxWidgets_select @1.0_2 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T15:46:16-0600'
-  x264 @0.164.3108_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:20-0600'
-  x265 @4.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:45-0600'
-  xar @1.8.0.501_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:36-0600'
-  xauth @1.1.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:44:50-0600'
-  Xaw3d @1.6.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:48-0600'
-  Xft2 @2.3.8_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:26-0600'
-  xkbcomp @1.4.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:32-0600'
-  xkeyboard-config @2.5.1_1 (active) requested_variants='' platform='any any' archs='noarch' date='2025-08-14T14:32:32-0600'
-  xorg-libice @1.1.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:20-0600'
-  xorg-libpthread-stubs @0.5_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:08:44-0600'
-  xorg-libsm @1.2.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:20-0600'
-  xorg-libX11 @1.8.11_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:19-0600'
-  xorg-libXau @1.0.12_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:12-0600'
-  xorg-libXaw @1.0.16_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:44-0600'
-  xorg-libxcb @1.17.0_0+python313 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:13-0600'
-  xorg-libXcomposite @0.4.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:28:57-0600'
-  xorg-libXcursor @1.2.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:31-0600'
-  xorg-libXdamage @1.1.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:31-0600'
-  xorg-libXdmcp @1.1.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:12-0600'
-  xorg-libXext @1.3.6_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:21-0600'
-  xorg-libXfixes @6.0.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:43-0600'
-  xorg-libXi @1.8.2_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:43-0600'
-  xorg-libXinerama @1.1.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:23:49-0600'
-  xorg-libxkbfile @1.1.3_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:32-0600'
-  xorg-libXmu @1.2.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:21-0600'
-  xorg-libXp @1.0.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:08:44-0600'
-  xorg-libXrandr @1.5.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:32-0600'
-  xorg-libXScrnSaver @1.2.4_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:27:54-0600'
-  xorg-libXt @1.3.1_0+docs (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:21-0600'
-  xorg-libXtst @1.2.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:32:34-0600'
-  xorg-xcb-proto @1.17.0_0+python313 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:03:26-0600'
-  xorg-xcb-util @0.4.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:22-0600'
-  xorg-xorgproto @2024.1_0 (active) requested_variants='' platform='darwin any' archs='noarch' date='2025-08-14T14:05:02-0600'
-  xpdf @4.05_0+qt5 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:14:20-0600'
-  xpm @3.5.17_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:06:43-0600'
-  xrender @0.9.12_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:05:22-0600'
-  XviD @1.3.7_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:18-0600'
-  xxdiff @4.0.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T16:43:12-0600'
-  xxhashlib @0.8.3_3 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:37:52-0600'
-  xz @5.8.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:46-0600'
-  zimg @3.0.5_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:21-0600'
-  zip @3.00_1 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T15:42:44-0600'
-  zlib @1.3.1_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:45-0600'
-  zstd @1.5.7_0 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:01:47-0600'
-  zvbi @0.2.35_6 (active) requested_variants='' platform='darwin 24' archs='arm64' date='2025-08-14T14:47:21-0600'
+aom
+apr
+apr-util
+aquaterm
+aspell
+aspell-dict-en
+at-spi2-atk
+at-spi2-core
+atk
+atkmm
+atkmm-1.6
+autoconf
+autoconf-archive
+automake
+avahi
+awscli_select
+bash
+bison
+bison-runtime
+blosc
+boost176
+boost181
+brotli
+brunsli
+byacc
+bzip2
+cairo
+cairomm
+cairomm-1.0
+cctools
+cdo
+cdo
+cdrtools
+charls
+clang-19
+clang-20
+clang_select
+cmake
+coreutils
+cunit
+curl
+curl-ca-bundle
+cyrus-sasl2
+cython_select
+dav1d
+db48
+dbus
+dbus-glib
+dbus-python313
+dcw-gmt
+djvulibre
+docutils_select
+dos2unix
+double-conversion
+doxygen
+dsh
+dvdrw-tools
+dvipng
+dvisvgm
+ecCodes
+enscript
+expat
+facter
+ffmpeg
+fftw-3
+fftw-3-single
+flac
+flex
+fontconfig
+fortune
+freetype
+freexl
+fribidi
+gcc14
+gcc14-libcxx
+gcc_select
+gd2
+gdal
+gdbm
+gdk-pixbuf2
+geos
+gettext
+gettext-runtime
+gettext-tools-libs
+ghostscript
+giflib
+giflib5
+git
+git
+git-lfs
+glib2
+glibmm
+glibmm-2.4
+gmp
+gmt6
+gnupg2
+gnupg2
+gnuplot
+gnutar
+gnutls
+gobject-introspection
+googlecl
+gpgme
+grads
+graphite2
+graphviz
+gshhg-gmt
+gsl
+gsmartcontrol
+gtk2
+gtk3
+gtkmm3
+gts
+gumbo-parser
+gv
+gzip
+harfbuzz
+harfbuzz-icu
+hdf4
+hdf5
+hicolor-icon-theme
+highway
+highway
+icu
+ImageMagick
+imath
+imlib2
+inetutils
+isl
+iso-codes
+jasper
+jasper2
+jbig2dec
+jbigkit
+kerberos5
+kvazaar
+lame
+latexdiff
+latexmk
+lcdf-typetools
+lcms2
+ld64
+ld64-xcode
+leptonica
+lerc
+less
+libaec
+libarchive
+libass
+libassuan
+libb2
+libbluray
+libcaca
+libcerf
+libcomerr
+libcxx
+libdaemon
+libdap
+libde265
+libdeflate
+libdshconfig
+libedit
+libelf
+libepoxy
+libevent
+libfetch
+libffi
+libgcc
+libgcc14
+libgcrypt
+libgeotiff
+libgpg-error
+libheif
+libiconv
+libid3tag
+libidn
+libidn2
+libjpeg-turbo
+libjxl
+libksba
+libLASi
+libmagic
+libmodplug
+libmpc
+libnetpbm
+libogg
+libomp
+libopus
+libpaper
+libpixman
+libpng
+libpsl
+libraw
+librsvg
+librttopo
+libsdl2
+libsigcxx2
+libsigcxx3
+libsndfile
+libspectre
+libtasn1
+libtextstyle
+libtheora
+libtool
+libunistring
+libunrar
+libunrar
+libusb
+libusb-compat
+libutf8proc
+libvidstab
+libvorbis
+libvpx
+libxkbcommon
+libxkbcommon-x11
+libxml2
+libxslt
+libyaml
+libzip
+libzzip
+llvm-19
+llvm-20
+llvm_select
+lmdb
+lua
+luametatex
+lynx
+lz4
+lzma
+lzo2
+m4
+mc
+mesa
+minizip
+mpdecimal
+mpfr
+mpg123
+mupdf
+mypy_select
+ncplot
+ncurses
+ncview
+neomutt
+netcdf
+netcdf-cxx
+netpbm
+nettle
+nghttp2
+npth
+nspr
+nss
+nss
+oniguruma6
+OpenBLAS
+opendetex
+openexr
+openh264
+openjpeg
+openjpeg15
+openldap
+openmotif
+openspecfun
+openssh
+openssl
+openssl3
+openssl10
+openssl11
+orc
+p5.34-algorithm-diff
+p5.34-authen-sasl
+p5.34-b-hooks-endofscope
+p5.34-cgi
+p5.34-class-data-inheritable
+p5.34-class-method-modifiers
+p5.34-class-xsaccessor
+p5.34-clone
+p5.34-clone-pp
+p5.34-compress-raw-bzip2
+p5.34-compress-raw-zlib
+p5.34-crypt-urandom
+p5.34-data-dump
+p5.34-data-dumper
+p5.34-data-optlist
+p5.34-dbd-csv
+p5.34-dbd-sqlite
+p5.34-dbi
+p5.34-devel-globaldestruction
+p5.34-devel-stacktrace
+p5.34-digest-hmac
+p5.34-digest-sha1
+p5.34-dist-checkconflicts
+p5.34-encode
+p5.34-encode-din66003
+p5.34-encode-eucjpascii
+p5.34-encode-hanextra
+p5.34-encode-iso2022
+p5.34-encode-jisx0213
+p5.34-encode-locale
+p5.34-error
+p5.34-eval-closure
+p5.34-exception-class
+p5.34-file-copy-recursive
+p5.34-file-homedir
+p5.34-file-listing
+p5.34-file-which
+p5.34-font-afm
+p5.34-getopt-long
+p5.34-gssapi
+p5.34-html-form
+p5.34-html-formatter
+p5.34-html-parser
+p5.34-html-tagset
+p5.34-html-tree
+p5.34-http-cookies
+p5.34-http-daemon
+p5.34-http-date
+p5.34-http-message
+p5.34-http-negotiate
+p5.34-io-compress
+p5.34-io-html
+p5.34-io-socket-ip
+p5.34-io-socket-ssl
+p5.34-ipc-system-simple
+p5.34-libwww-perl
+p5.34-libxml-perl
+p5.34-log-dispatch
+p5.34-lwp-mediatypes
+p5.34-lwp-protocol-https
+p5.34-mac-systemdirectory
+p5.34-math-base-convert
+p5.34-math-complex
+p5.34-mime-base32
+p5.34-mime-base64
+p5.34-mime-charset
+p5.34-module-implementation
+p5.34-module-load
+p5.34-module-runtime
+p5.34-mozilla-ca
+p5.34-mro-compat
+p5.34-namespace-autoclean
+p5.34-namespace-clean
+p5.34-net-http
+p5.34-net-smtp-ssl
+p5.34-net-ssleay
+p5.34-package-stash
+p5.34-package-stash-xs
+p5.34-params-util
+p5.34-params-validationcompiler
+p5.34-parent
+p5.34-pod2-base
+p5.34-ref-util
+p5.34-ref-util-xs
+p5.34-regexp-ipv6
+p5.34-role-tiny
+p5.34-scalar-list-utils
+p5.34-scope-guard
+p5.34-socket
+p5.34-specio
+p5.34-sql-statement
+p5.34-sub-exporter
+p5.34-sub-exporter-progressive
+p5.34-sub-install
+p5.34-sub-name
+p5.34-sub-quote
+p5.34-sys-syslog
+p5.34-term-readkey
+p5.34-test-fatal
+p5.34-text-balanced
+p5.34-text-csv_xs
+p5.34-text-parsewords
+p5.34-text-soundex
+p5.34-time-local
+p5.34-timedate
+p5.34-tk
+p5.34-try-tiny
+p5.34-unicode-linebreak
+p5.34-uri
+p5.34-variable-magic
+p5.34-version
+p5.34-www-mechanize
+p5.34-www-robotrules
+p5.34-xml-dom
+p5.34-xml-parser
+p5.34-xml-regexp
+p5.34-xsloader
+p5.34-xstring
+p5.34-yaml-tiny
+p11-kit
+pango
+pangomm
+pangomm-1.4
+pcre
+pcre2
+pdfjam
+perl5
+perl5.34
+pinentry
+pip_select
+pkgconfig
+plotutils
+poppler
+poppler-data
+popt
+port_cutleaves
+postgresql17
+postgresql_select
+postgresql_select-17
+potrace
+proctools
+proj
+proj8
+proj9
+ps2eps
+pssh-lilydjwg
+pstoedit
+pstree
+psutils
+pth
+pulseaudio
+py27-cython
+py27-cython-compat
+py27-gdata
+py27-numpy
+py27-oldest-supported-numpy
+py27-pybind11
+py27-setuptools
+py310-certifi
+py310-charset-normalizer
+py310-curl
+py310-idna
+py310-mypy
+py310-mypy_extensions
+py310-numpy
+py310-oldest-supported-numpy
+py310-pathspec
+py310-pip
+py310-requests
+py310-setuptools
+py310-tomli
+py310-typing_extensions
+py310-urllib3
+py312-asn1
+py312-certifi
+py312-colorama
+py312-docutils
+py312-jmespath
+py312-roman
+py312-rsa
+py312-six
+py312-urllib3
+py312-yaml
+py313-cairo
+py313-gdbm
+py313-gdbm
+py313-gobject3
+py313-mako
+py313-markdown
+py313-markupsafe
+py313-setuptools
+python2_select
+python3_select
+python3_select-310
+python3_select-311
+python3_select-312
+python3_select-313
+python27
+python310
+python311
+python312
+python313
+python313
+python_select
+python_select-310
+python_select-311
+python_select-312
+python_select-313
+qhull
+qt5-qtbase
+qt5-qtdeclarative
+qt5-qtsvg
+qt5-qttools
+R
+readline
+rsync
+ruby
+ruby_select
+serf1
+shapelib
+shared-mime-info
+slang2
+smake
+smartmontools
+snappy
+soxr
+spatialite
+speex
+speexdsp
+sqlite3
+ssh-copy-id
+subversion
+svt-av1
+swig
+swig-python
+t1lib
+t1utils
+tcl
+tcl
+tcllib
+tcp_wrappers
+tesseract
+texinfo
+texlive-basic
+texlive-bibtex-extra
+texlive-bin
+texlive-common
+texlive-context
+texlive-fonts-extra
+texlive-fonts-recommended
+texlive-fontutils
+texlive-humanities
+texlive-lang-czechslovak
+texlive-lang-english
+texlive-lang-european
+texlive-lang-french
+texlive-lang-german
+texlive-lang-italian
+texlive-lang-polish
+texlive-lang-portuguese
+texlive-lang-spanish
+texlive-latex
+texlive-latex-extra
+texlive-latex-recommended
+texlive-luatex
+texlive-math-science
+texlive-metapost
+texlive-pictures
+texlive-plain-generic
+texlive-tlpdb
+texlive-xetex
+tiff
+tk-x11
+tk-x11
+udunits
+udunits2
+unzip
+urw-fonts
+vala
+webp
+wgrib2
+woff2
+wxWidgets-3.2
+wxWidgets-common
+wxWidgets_select
+x264
+x265
+xar
+xauth
+Xaw3d
+Xft2
+xkbcomp
+xkeyboard-config
+xorg-libice
+xorg-libpthread-stubs
+xorg-libsm
+xorg-libX11
+xorg-libXau
+xorg-libXaw
+xorg-libxcb
+xorg-libXcomposite
+xorg-libXcursor
+xorg-libXdamage
+xorg-libXdmcp
+xorg-libXext
+xorg-libXfixes
+xorg-libXi
+xorg-libXinerama
+xorg-libxkbfile
+xorg-libXmu
+xorg-libXp
+xorg-libXrandr
+xorg-libXScrnSaver
+xorg-libXt
+xorg-libXtst
+xorg-xcb-proto
+xorg-xcb-util
+xorg-xorgproto
+xpdf
+xpm
+xrender
+XviD
+xxdiff
+xxhashlib
+xz
+zimg
+zip
+zlib
