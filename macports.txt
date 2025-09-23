@@ -419,7 +419,6 @@ pth
 pulseaudio
 py27-cython
 py27-cython-compat
-py27-gdata
 py27-numpy
 py27-oldest-supported-numpy
 py27-pybind11
