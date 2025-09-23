@@ -257,7 +257,6 @@ openexr
 openh264
 openjpeg
 openjpeg15
-openldap
 openmotif
 openspecfun
 openssh
