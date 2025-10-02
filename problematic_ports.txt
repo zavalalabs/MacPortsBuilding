@@ -1,0 +1,4 @@
+py27-gdata
+openldap
+texlive-*
+postgresql17

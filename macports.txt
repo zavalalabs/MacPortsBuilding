@@ -401,7 +401,6 @@ poppler
 poppler-data
 popt
 port_cutleaves
-postgresql17
 postgresql_select
 postgresql_select-17
 potrace

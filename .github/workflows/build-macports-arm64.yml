@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-arm64:
-    runs-on: macos-15 macos-26
+    runs-on: macos-14, macos-15, macos-latest
 
     steps:
       - uses: actions/checkout@v4

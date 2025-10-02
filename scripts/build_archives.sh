@@ -1,48 +1,87 @@
-#!/usr/bin/env bash
-set -euo pipefail
+#!/bin/bash
+# filepath: /Users/czavala/GitHub/MacPortsBuilding/scripts/build_archives.sh
+set -e
+
+# Ensure proper environment
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export TMPDIR=/tmp
 
-LIST_FILE="${1:-macports.txt}"
+# Function to fix permissions after each port installation
+fix_permissions() {
+    echo "Fixing permissions for MacPorts directories..."
+    sudo find /opt/local -type d -exec chmod 755 {} + 2>/dev/null || true
+    sudo find /opt/local -type f -exec chmod 644 {} + 2>/dev/null || true
+    sudo find /opt/local/bin -type f -exec chmod 755 {} + 2>/dev/null || true
+    sudo find /opt/local/sbin -type f -exec chmod 755 {} + 2>/dev/null || true
+    sudo chown -R macports:admin /opt/local 2>/dev/null || true
+}
 
-mkdir -p artifacts/archives
-FAILED=()
-SUCCESS=0
+# In build_archives.sh, add this before the main loop:
+problematic_ports=("py27-gdata" "openldap" "postgresql17")
 
-# Iterate lines safely; skip blanks and comments
-while IFS= read -r line || [ -n "${line:-}" ]; do
-  # trim
-  port="${line#"${line%%[![:space:]]*}"}"
-  port="${port%"${port##*[![:space:]]}"}"
-  # skip empty or comment
-  [ -z "$port" ] && continue
-  case "$port" in \#*) continue ;; esac
+# Check if current port is problematic
+is_problematic() {
+    local port=$1
+    for problematic in "${problematic_ports[@]}"; do
+        [[ "$port" == "$problematic" ]] && return 0
+    done
+    return 1
+}
 
-  echo "=== Archiving: $port ==="
-  if sudo port -N -k archive $port; then
-    SUCCESS=$((SUCCESS+1))
-  else
-    echo "FAILED: $port"
-    FAILED+=("$port")
-  fi
-done < "$LIST_FILE"
+# In the main loop, modify the install command:
+if is_problematic "$port"; then
+    echo "Installing problematic port with special handling: $port"
+    if sudo port install "$port" && sudo chmod -R 755 /opt/local/var/macports/software/"$port"* 2>/dev/null; then
+        echo "✓ Successfully installed with permission fix: $port"
+    else
+        echo "✗ FAILED: $port"
+        failed_ports+=("$port")
+    fi
+else
+    # Normal installation
+    if sudo port install "$port"; then
+        echo "✓ Successfully installed: $port"
+    else
+        echo "✗ FAILED: $port"
+        failed_ports+=("$port")
+    fi
+fi
 
-# Collect produced archives (flatten into artifacts/archives)
-SOFTWARE_DIR="/opt/local/var/macports/software"
-find "$SOFTWARE_DIR" -type f -name '*.tbz2' -print0 | xargs -0 -I{} cp {} artifacts/archives/
+# Clean environment before building
+echo "Cleaning MacPorts environment..."
+sudo port clean --all all || true
+sudo port uninstall inactive || true
 
-# Manifest
-OS_VERSION="$(sw_vers -productVersion)"
-ARCH="$(uname -m)"
-{
-  echo "os: ${OS_VERSION}"
-  echo "arch: ${ARCH}"
-  echo "ports_success: ${SUCCESS}"
-  echo "failed_count: ${#FAILED[@]}"
-  if [ "${#FAILED[@]}" -gt 0 ]; then
-    printf 'failed: %s\n' "${FAILED[@]}"
-  fi
-} > artifacts/archives/manifest.txt
+# Fix permissions before starting
+fix_permissions
 
-# Save the cleaned list we actually tried
-# (same filter logic as loop)
-awk '!/^[[:space:]]*($|#)/' "$LIST_FILE" > artifacts/archives/install-list.txt
+# Build ports with error handling
+failed_ports=()
+while IFS= read -r port; do
+    # Skip empty lines and comments
+    [[ -z "$port" || "$port" =~ ^[[:space:]]*# ]] && continue
+    
+    echo "Building: $port"
+    if sudo port install "$port"; then
+        echo "✓ Successfully installed: $port"
+        # Fix permissions after each successful install
+        fix_permissions
+    else
+        echo "✗ FAILED: $port"
+        failed_ports+=("$port")
+        # Try to clean up failed port
+        sudo port clean "$port" || true
+    fi
+done < macports.txt
+
+# Report failed ports
+if [ ${#failed_ports[@]} -gt 0 ]; then
+    echo "Failed ports:" > failed_ports.log
+    printf '%s\n' "${failed_ports[@]}" >> failed_ports.log
+    echo "Build completed with ${#failed_ports[@]} failed ports"
+else
+    echo "All ports built successfully!"
+fi
+
+# Final permission fix
+fix_permissions

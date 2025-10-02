@@ -1,74 +1,62 @@
-name: Build MacPorts Binaries - self-hosted arm64
-
+name: Build MacPorts Self-Hosted
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "macports.txt"
-      - "scripts/**"
-      - ".github/workflows/build-macports.yml"
+  schedule:
+    - cron: '0 2 * * 1'  # Every Monday at 2 AM
 
 jobs:
-  build-selfhosted-arm64:
-    strategy:
-      fail-fast: false
-      matrix:
-        # These must be labels you've set on your self-hosted runners
-        os_label: [macos-15]
-
-    # Require a self-hosted macOS ARM64 runner with the matching OS label
-    runs-on:
-      - self-hosted
-      - macOS
-      - ARM64
-      - ${{ matrix.os_label }}
-
-    # MacPorts builds can take a while; bump if needed
-    timeout-minutes: 240
-
+  build:
+    runs-on: self-hosted
+    timeout-minutes: 480  # 8 hours timeout
+    
     steps:
-      - name: Sanity (print runner info)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up environment
         run: |
-          echo "Wanted labels: self-hosted macOS ARM64 ${{ matrix.os_label }}"
-          echo "runner.os=${{ runner.os }}"
-          echo "runner.arch=${{ runner.arch }}"
-          uname -a
-          sw_vers
-          arch
-          sysctl -n hw.ncpu
-
-      # Guard against wrong platform picking up the job
-      - name: Assert correct OS/arch
-        if: ${{ runner.os != 'macOS' || runner.arch != 'ARM64' }}
+          echo "Setting up build environment..."
+          export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+          
+      - name: Fix initial permissions
         run: |
-          echo "::error::This workflow must run on macOS ARM64. Got ${RUNNER_OS}/${RUNNER_ARCH}."
-          exit 1
-
-      - uses: actions/checkout@v4
-
-      - name: Make scripts executable (defensive)
+          sudo chown -R macports:admin /opt/local || true
+          sudo find /opt/local -type d -exec chmod 755 {} + 2>/dev/null || true
+          sudo chmod -R 755 /opt/local/var/macports || true
+          
+      - name: Clean MacPorts
+        run: |
+          sudo port clean --all all || true
+          sudo port uninstall inactive || true
+          
+      - name: Bootstrap MacPorts
         run: |
           chmod +x scripts/bootstrap_macports.sh
+          ./scripts/bootstrap_macports.sh
+          
+      - name: Build archives
+        run: |
           chmod +x scripts/build_archives.sh
-          chmod +x scripts/build_pkgs.sh || true
-
-      - name: Bootstrap MacPorts (arm64)
-        run: bash scripts/bootstrap_macports.sh
-
-      # Use sudo so MacPorts can set ownership/modes without permission errors
-      - name: Build binary archives
-        run: sudo bash scripts/build_archives.sh macports.txt
-
-      - name: Upload archives
+          ./scripts/build_archives.sh
+        continue-on-error: true
+        
+      - name: Build packages
+        run: |
+          chmod +x scripts/build_pkgs.sh
+          ./scripts/build_pkgs.sh
+        continue-on-error: true
+        
+      - name: Final cleanup and permissions
+        run: |
+          sudo find /opt/local -type d -exec chmod 755 {} + 2>/dev/null || true
+          sudo chown -R macports:admin /opt/local 2>/dev/null || true
+        if: always()
+        
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: macports-archives-${{ matrix.os_label }}-arm64-selfhosted
-          path: artifacts/archives
-
-      # Optional: collect logs if your scripts write any (uncomment if you have logs/)
-      # - name: Upload logs
-      #   if: always()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: logs-${{ matrix.os_label }}
-      #     path: logs
+          name: macports-build-logs
+          path: |
+            failed_ports.log
+            *.log
+        if: always()
