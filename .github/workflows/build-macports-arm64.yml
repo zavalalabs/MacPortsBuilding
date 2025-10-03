@@ -44,7 +44,7 @@ jobs:
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
           port version
-          port selfupdate
+          sudo port selfupdate
 
       - name: Clean previous builds
         run: |
