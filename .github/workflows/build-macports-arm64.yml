@@ -1,31 +1,137 @@
-name: Build MacPorts
+name: Build MacPorts Packages
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
+  schedule:
+    - cron: '0 2 * * 1'  # Weekly on Mondays at 2 AM
 
 jobs:
-  build:
-    runs-on: macos-14
+  build-macos:
+    runs-on: macos-latest
+    timeout-minutes: 480  # 8 hours
 
     strategy:
       matrix:
-        macos-version: [14, 15, 16]
+        arch: [arm64, x86_64]
+      fail-fast: false
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up MacPorts
+      - name: Set up environment
         run: |
+          echo "ARCH=${{ matrix.arch }}" >> $GITHUB_ENV
+          echo "Building for architecture: ${{ matrix.arch }}"
+          
+      - name: Install MacPorts
+        run: |
+          # Download and install MacPorts
+          MACOS_VERSION=$(sw_vers -productVersion | cut -d. -f1-2)
+          echo "macOS version: $MACOS_VERSION"
+          
+          if [[ "${{ matrix.arch }}" == "arm64" ]]; then
+            MACPORTS_URL="https://distfiles.macports.org/MacPorts/MacPorts-2.9.3-14-Sonoma.pkg"
+          else
+            MACPORTS_URL="https://distfiles.macports.org/MacPorts/MacPorts-2.9.3-14-Sonoma.pkg"
+          fi
+          
+          curl -L -o MacPorts.pkg "$MACPORTS_URL"
+          sudo installer -pkg MacPorts.pkg -target /
+          
+          # Add MacPorts to PATH
+          echo "/opt/local/bin:/opt/local/sbin" >> $GITHUB_PATH
+          export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+          
+          # Update MacPorts
           sudo port selfupdate
-          sudo port install macports
 
-      - name: Build MacPorts
+      - name: Bootstrap MacPorts
         run: |
-          # Add your build commands here
-          echo "Building MacPorts on macOS ${{ matrix.macos-version }}"
+          chmod +x scripts/bootstrap_macports.sh
+          ./scripts/bootstrap_macports.sh
+
+      - name: Clean previous builds
+        run: |
+          sudo port clean --all all || true
+          sudo port uninstall inactive || true
+
+      - name: Build archives
+        run: |
+          chmod +x scripts/build_archives.sh
+          ./scripts/build_archives.sh
+        continue-on-error: true
+
+      - name: Build packages
+        run: |
+          chmod +x scripts/build_pkgs.sh
+          ./scripts/build_pkgs.sh
+        continue-on-error: true
+
+      - name: Create build summary
+        run: |
+          echo "## Build Summary" > build_summary.md
+          echo "- Architecture: ${{ matrix.arch }}" >> build_summary.md
+          echo "- macOS Version: $(sw_vers -productVersion)" >> build_summary.md
+          echo "- Build Date: $(date)" >> build_summary.md
+          echo "- MacPorts Version: $(port version)" >> build_summary.md
+          
+          if [ -f failed_ports.log ]; then
+            echo "- Failed Ports: $(wc -l < failed_ports.log)" >> build_summary.md
+          else
+            echo "- Failed Ports: 0" >> build_summary.md
+          fi
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: macports-build-${{ matrix.arch }}-${{ github.run_number }}
+          path: |
+            build_summary.md
+            failed_ports.log
+            *.log
+            archives/
+            packages/
+        if: always()
+
+      - name: Upload failed ports log
+        uses: actions/upload-artifact@v4
+        with:
+          name: failed-ports-${{ matrix.arch }}
+          path: failed_ports.log
+        if: failure() && hashFiles('failed_ports.log') != ''
+
+  build-summary:
+    needs: build-macos
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        
+      - name: Create final summary
+        run: |
+          echo "# MacPorts Build Report" > final_summary.md
+          echo "Build completed on: $(date)" >> final_summary.md
+          echo "" >> final_summary.md
+          
+          for dir in macports-build-*; do
+            if [ -d "$dir" ]; then
+              echo "## $dir" >> final_summary.md
+              if [ -f "$dir/build_summary.md" ]; then
+                cat "$dir/build_summary.md" >> final_summary.md
+              fi
+              echo "" >> final_summary.md
+            fi
+          done
+          
+      - name: Upload final summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report-${{ github.run_number }}
+          path: final_summary.md
