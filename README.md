@@ -1,0 +1,1 @@
+[![Build MacPorts Binaries (arm64)](https://github.com/zavalalabs/MacPortsBuilding/actions/workflows/build-macports-arm64.yml/badge.svg)](https://github.com/zavalalabs/MacPortsBuilding/actions/workflows/build-macports-arm64.yml)
