@@ -1,0 +1,31 @@
+name: Build MacPorts
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    strategy:
+      matrix:
+        macos-version: [14, 15, 16]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up MacPorts
+        run: |
+          sudo port selfupdate
+          sudo port install macports
+
+      - name: Build MacPorts
+        run: |
+          # Add your build commands here
+          echo "Building MacPorts on macOS ${{ matrix.macos-version }}"
