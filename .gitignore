@@ -1,0 +1,22 @@
+# Build artifacts
+failed_ports.log
+build_summary.md
+issue_body.md
+*.log
+
+# Archives and packages
+archives/
+packages/
+artifacts/
+
+# MacPorts specific
+.DS_Store
+*.mpkg
+*.pkg
+
+# Temporary files
+/tmp/
+*.tmp
+*.bak
+
+# Note: build_attempts.json is intentionally tracked to persist across builds

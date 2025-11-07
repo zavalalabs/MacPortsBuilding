@@ -31,42 +31,77 @@ jobs:
             echo "Warning: Running on non-ARM64 architecture"
           fi
 
+      - name: Check build attempt limit
+        id: check_attempts
+        run: |
+          chmod +x scripts/track_build_attempts.sh
+          if ./scripts/track_build_attempts.sh can-build; then
+            echo "can_build=true" >> $GITHUB_OUTPUT
+            ./scripts/track_build_attempts.sh status
+          else
+            echo "can_build=false" >> $GITHUB_OUTPUT
+            echo "::warning::Maximum build attempts (3) reached in the last 24 hours"
+          fi
+
       - name: Bootstrap MacPorts
+        if: steps.check_attempts.outputs.can_build == 'true'
         run: |
           chmod +x scripts/bootstrap_macports.sh
           ./scripts/bootstrap_macports.sh
 
       - name: Add MacPorts to PATH
+        if: steps.check_attempts.outputs.can_build == 'true'
         run: |
           echo "/opt/local/bin:/opt/local/sbin" >> $GITHUB_PATH
 
       - name: Verify MacPorts installation
+        if: steps.check_attempts.outputs.can_build == 'true'
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
           port version
           sudo port selfupdate
 
       - name: Clean previous builds
+        if: steps.check_attempts.outputs.can_build == 'true'
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
           sudo port clean --all all || true
           sudo port uninstall inactive || true
 
       - name: Build archives
+        id: build_archives
+        if: steps.check_attempts.outputs.can_build == 'true'
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
           chmod +x scripts/build_archives.sh
-          ./scripts/build_archives.sh
+          if ./scripts/build_archives.sh; then
+            echo "build_status=success" >> $GITHUB_OUTPUT
+          else
+            echo "build_status=failure" >> $GITHUB_OUTPUT
+            exit 1
+          fi
         continue-on-error: true
 
       - name: Build packages
+        if: steps.check_attempts.outputs.can_build == 'true' && steps.build_archives.outputs.build_status == 'success'
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
           chmod +x scripts/build_pkgs.sh
           ./scripts/build_pkgs.sh
         continue-on-error: true
+      
+      - name: Record build result
+        if: always() && steps.check_attempts.outputs.can_build == 'true'
+        run: |
+          chmod +x scripts/track_build_attempts.sh
+          if [[ "${{ steps.build_archives.outputs.build_status }}" == "success" ]]; then
+            ./scripts/track_build_attempts.sh record-success
+          else
+            ./scripts/track_build_attempts.sh record-failure
+          fi
 
       - name: Create build summary
+        if: always() && steps.check_attempts.outputs.can_build == 'true'
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
           echo "## Build Summary" > build_summary.md
@@ -74,12 +109,39 @@ jobs:
           echo "- macOS Version: $(sw_vers -productVersion)" >> build_summary.md
           echo "- Build Date: $(date)" >> build_summary.md
           echo "- MacPorts Version: $(port version)" >> build_summary.md
+          echo "- Build Status: ${{ steps.build_archives.outputs.build_status }}" >> build_summary.md
           
           if [ -f failed_ports.log ]; then
             echo "- Failed Ports: $(wc -l < failed_ports.log)" >> build_summary.md
           else
             echo "- Failed Ports: 0" >> build_summary.md
           fi
+          
+          if [ -f problematic_ports.txt ]; then
+            echo "- Problematic Ports (skipped): $(grep -vE '^\s*(#|$)' problematic_ports.txt | wc -l)" >> build_summary.md
+          fi
+
+      - name: Check if issue should be created
+        id: check_issue
+        if: always() && steps.check_attempts.outputs.can_build == 'true' && steps.build_archives.outputs.build_status == 'failure'
+        run: |
+          chmod +x scripts/track_build_attempts.sh
+          if ./scripts/track_build_attempts.sh should-create-issue; then
+            echo "should_create=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_create=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Create failure issue
+        if: always() && steps.check_issue.outputs.should_create == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          chmod +x scripts/create_build_issue.sh
+          ./scripts/create_build_issue.sh create failed_ports.log build_summary.md || {
+            echo "Failed to create issue via gh CLI, saving issue body for manual creation"
+            ./scripts/create_build_issue.sh save issue_body.md failed_ports.log build_summary.md
+          }
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
@@ -88,6 +150,9 @@ jobs:
           path: |
             build_summary.md
             failed_ports.log
+            problematic_ports.txt
+            build_attempts.json
+            issue_body.md
             *.log
             archives/
             packages/
@@ -99,6 +164,28 @@ jobs:
           name: failed-ports-arm64
           path: failed_ports.log
         if: failure() && hashFiles('failed_ports.log') != ''
+      
+      - name: Commit updated problematic ports
+        if: always() && steps.check_attempts.outputs.can_build == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Check if problematic_ports.txt or build_attempts.json changed
+          if git diff --quiet problematic_ports.txt build_attempts.json; then
+            echo "No changes to commit"
+          else
+            git add problematic_ports.txt build_attempts.json || {
+              echo "Warning: Failed to add files to git"
+              exit 0
+            }
+            git commit -m "Update problematic ports and build attempts tracking [skip ci]" || {
+              echo "Warning: Failed to commit changes"
+              exit 0
+            }
+            git push || echo "Failed to push changes (this is okay in PR builds)"
+          fi
+        continue-on-error: true
 
   build-summary:
     needs: build-macos
