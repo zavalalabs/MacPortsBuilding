@@ -76,11 +76,12 @@ jobs:
           chmod +x scripts/build_archives.sh
           if ./scripts/build_archives.sh; then
             echo "build_status=success" >> $GITHUB_OUTPUT
+            exit 0
           else
             echo "build_status=failure" >> $GITHUB_OUTPUT
-            exit 1
+            # Allow workflow to continue for cleanup/reporting, but mark as failed
+            exit 0
           fi
-        continue-on-error: true
 
       - name: Build packages
         if: steps.check_attempts.outputs.can_build == 'true' && steps.build_archives.outputs.build_status == 'success'
@@ -105,21 +106,33 @@ jobs:
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
           echo "## Build Summary" > build_summary.md
-          echo "- Architecture: $(uname -m)" >> build_summary.md
-          echo "- macOS Version: $(sw_vers -productVersion)" >> build_summary.md
-          echo "- Build Date: $(date)" >> build_summary.md
-          echo "- MacPorts Version: $(port version)" >> build_summary.md
-          echo "- Build Status: ${{ steps.build_archives.outputs.build_status }}" >> build_summary.md
+          echo "" >> build_summary.md
+          echo "- **Architecture**: $(uname -m)" >> build_summary.md
+          echo "- **macOS Version**: $(sw_vers -productVersion)" >> build_summary.md
+          echo "- **Build Date**: $(date)" >> build_summary.md
+          echo "- **MacPorts Version**: $(port version)" >> build_summary.md
+          echo "- **Build Status**: ${{ steps.build_archives.outputs.build_status }}" >> build_summary.md
+          echo "" >> build_summary.md
           
           if [ -f failed_ports.log ]; then
-            echo "- Failed Ports: $(wc -l < failed_ports.log)" >> build_summary.md
+            failed_count=$(wc -l < failed_ports.log | tr -d ' ')
+            echo "- **Failed Ports**: $failed_count" >> build_summary.md
+            if [ "${{ steps.build_archives.outputs.build_status }}" == "failure" ]; then
+              echo "" >> build_summary.md
+              echo "### ⚠️ Build Failed" >> build_summary.md
+              echo "The build process encountered $failed_count failed ports. See failed_ports.log for details." >> build_summary.md
+            fi
           else
-            echo "- Failed Ports: 0" >> build_summary.md
+            echo "- **Failed Ports**: 0" >> build_summary.md
           fi
           
           if [ -f problematic_ports.txt ]; then
-            echo "- Problematic Ports (skipped): $(grep -vE '^\s*(#|$)' problematic_ports.txt | wc -l)" >> build_summary.md
+            skipped_count=$(grep -vE '^\s*(#|$)' problematic_ports.txt | wc -l | tr -d ' ')
+            echo "- **Problematic Ports (skipped)**: $skipped_count" >> build_summary.md
           fi
+          
+          # Add summary to GitHub step summary
+          cat build_summary.md >> $GITHUB_STEP_SUMMARY
 
       - name: Check if issue should be created
         id: check_issue
@@ -166,7 +179,9 @@ jobs:
         if: failure() && hashFiles('failed_ports.log') != ''
       
       - name: Commit updated problematic ports
-        if: always() && steps.check_attempts.outputs.can_build == 'true'
+        if: always() && steps.check_attempts.outputs.can_build == 'true' && github.event_name != 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -183,9 +198,19 @@ jobs:
               echo "Warning: Failed to commit changes"
               exit 0
             }
-            git push || echo "Failed to push changes (this is okay in PR builds)"
+            # Use authenticated push with GitHub token
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }} || {
+              echo "Failed to push changes"
+              exit 0
+            }
           fi
         continue-on-error: true
+
+      - name: Fail workflow if build failed
+        if: always() && steps.build_archives.outputs.build_status == 'failure'
+        run: |
+          echo "::error::Build failed with errors. Check the build summary and failed_ports.log for details."
+          exit 1
 
   build-summary:
     needs: build-macos
