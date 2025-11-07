@@ -9,6 +9,9 @@ export TMPDIR=/tmp
 # Build attempt tracking file
 BUILD_ATTEMPTS_FILE="${BUILD_ATTEMPTS_FILE:-build_attempts.json}"
 
+# Cache for problematic ports to avoid repeated file reads
+declare -a PROBLEMATIC_PORTS_CACHE
+
 # Function to fix permissions after each port installation
 fix_permissions() {
   echo "Fixing permissions for MacPorts directories..."
@@ -19,25 +22,37 @@ fix_permissions() {
   sudo chown -R macports:admin /opt/local 2>/dev/null || true
 }
 
-# Load problematic ports from file
+# Load problematic ports from file into cache
 load_problematic_ports() {
-  local ports=()
+  # Return cached value if already loaded
+  if [ ${#PROBLEMATIC_PORTS_CACHE[@]} -gt 0 ]; then
+    printf '%s\n' "${PROBLEMATIC_PORTS_CACHE[@]}"
+    return
+  fi
+  
+  # Load from file
   if [ -f "problematic_ports.txt" ]; then
     while IFS= read -r line; do
       # Skip empty lines and comments
       [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
       # Handle wildcard patterns (e.g., texlive-*)
-      ports+=("$line")
+      PROBLEMATIC_PORTS_CACHE+=("$line")
     done < "problematic_ports.txt"
   fi
-  printf '%s\n' "${ports[@]}"
+  printf '%s\n' "${PROBLEMATIC_PORTS_CACHE[@]}"
 }
 
 # Check if current port is problematic
 is_problematic() {
   local port=$1
   local pattern
-  while IFS= read -r pattern; do
+  
+  # Load into cache if not already loaded
+  if [ ${#PROBLEMATIC_PORTS_CACHE[@]} -eq 0 ]; then
+    load_problematic_ports > /dev/null
+  fi
+  
+  for pattern in "${PROBLEMATIC_PORTS_CACHE[@]}"; do
     [[ -z "$pattern" ]] && continue
     # Handle wildcard patterns
     if [[ "$pattern" == *"*"* ]]; then
@@ -47,7 +62,7 @@ is_problematic() {
     else
       [[ "$port" == "$pattern" ]] && return 0
     fi
-  done < <(load_problematic_ports)
+  done
   return 1
 }
 

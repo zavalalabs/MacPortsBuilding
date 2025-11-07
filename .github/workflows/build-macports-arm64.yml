@@ -172,11 +172,17 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
           # Check if problematic_ports.txt or build_attempts.json changed
-          if git diff --quiet problematic_ports.txt build_attempts.json 2>/dev/null; then
+          if git diff --quiet problematic_ports.txt build_attempts.json; then
             echo "No changes to commit"
           else
-            git add problematic_ports.txt build_attempts.json 2>/dev/null || true
-            git commit -m "Update problematic ports and build attempts tracking [skip ci]" || true
+            git add problematic_ports.txt build_attempts.json || {
+              echo "Warning: Failed to add files to git"
+              exit 0
+            }
+            git commit -m "Update problematic ports and build attempts tracking [skip ci]" || {
+              echo "Warning: Failed to commit changes"
+              exit 0
+            }
             git push || echo "Failed to push changes (this is okay in PR builds)"
           fi
         continue-on-error: true

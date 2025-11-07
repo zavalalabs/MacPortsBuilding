@@ -82,14 +82,22 @@ print(len(data['attempts']))
 # Get recent failed attempts count
 get_failed_attempts_count() {
   initialize_attempts_file
-  clean_old_attempts > /dev/null 2>&1
+  # Suppress "Cleaned attempts" message but not errors
+  local cleanup_output=$(clean_old_attempts 2>&1)
+  if [ $? -ne 0 ]; then
+    echo "Warning: Failed to clean old attempts: $cleanup_output" >&2
+  fi
   
   local count=$(cat "$BUILD_ATTEMPTS_FILE" | python3 -c "
 import sys, json
-data = json.load(sys.stdin)
-failed = [a for a in data['attempts'] if a['status'] == 'failure']
-print(len(failed))
-" 2>/dev/null)
+try:
+    data = json.load(sys.stdin)
+    failed = [a for a in data['attempts'] if a['status'] == 'failure']
+    print(len(failed))
+except Exception as e:
+    print(f'Error: {e}', file=sys.stderr)
+    print(0)
+")
   
   echo "$count"
 }

@@ -19,7 +19,7 @@ The MacPorts build process has failed 3 consecutive times within a 24-hour perio
 
 ### Build Information
 - **Repository**: $REPO
-- **Workflow Run**: $GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID
+- **Workflow Run**: ${GITHUB_SERVER_URL:-https://github.com}/$REPO/actions/runs/${GITHUB_RUN_ID:-unknown}
 - **Timestamp**: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
 - **Branch**: ${GITHUB_REF#refs/heads/}
 
