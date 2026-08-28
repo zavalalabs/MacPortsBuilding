@@ -9,6 +9,10 @@ on:
   schedule:
     - cron: '0 2 * * 1'  # Weekly on Mondays at 2 AM
 
+permissions:
+  contents: write
+  issues: write
+
 jobs:
   build-macos:
     runs-on: macos-latest
