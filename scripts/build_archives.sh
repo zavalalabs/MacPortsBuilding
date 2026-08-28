@@ -13,13 +13,14 @@ BUILD_ATTEMPTS_FILE="${BUILD_ATTEMPTS_FILE:-build_attempts.json}"
 declare -a PROBLEMATIC_PORTS_CACHE
 
 # Function to fix permissions after each port installation
+# NOTE: must be additive-only. A blanket "chmod 644 everything, then chmod 755
+# a couple of subdirs back" strips the execute bit from every binary/library
+# under /opt/local (not just bin/ and sbin/) and never restores it anywhere
+# else port depends on, which breaks `port` itself. `chmod go+rX` only adds
+# read/execute and never removes bits that are already needed.
 fix_permissions() {
   echo "Fixing permissions for MacPorts directories..."
-  sudo find /opt/local -type d -exec chmod 755 {} + 2>/dev/null || true
-  sudo find /opt/local -type f -exec chmod 644 {} + 2>/dev/null || true
-  sudo find /opt/local/bin -type f -exec chmod 755 {} + 2>/dev/null || true
-  sudo find /opt/local/sbin -type f -exec chmod 755 {} + 2>/dev/null || true
-  sudo chown -R macports:admin /opt/local 2>/dev/null || true
+  sudo chmod -R go+rX /opt/local 2>/dev/null || true
 }
 
 # Load problematic ports from file into cache
