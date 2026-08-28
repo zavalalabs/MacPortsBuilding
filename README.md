@@ -2,10 +2,13 @@
 
 # MacPorts Building
 
-Automated MacPorts package building system for ARM64 macOS with intelligent failure handling and retry logic.
+Still a Mac admin dealing with MacPorts because Homebrew isn't in the cards — SIP-locked fleets, no per-user `/usr/local` Cellar, or legacy ports (old Perl/Python builds, X11 tooling, TeX Live) that Homebrew dropped years ago? Need to package that stuff instead of compiling it by hand on every machine? This is for you.
+
+`MacPortsBuilding` is a GitHub Actions pipeline that builds a curated list of MacPorts packages on ARM64 macOS and turns them into deployable `.pkg`/`.mpkg` installers — so the compile pain (looking at you, `gcc14`, `qt5`, `ffmpeg`) happens once in CI, not on every managed Mac in your fleet. It tracks which ports are currently broken, skips them automatically on future runs, and stops itself (with a GitHub issue) instead of silently burning runner minutes when something's systemically wrong.
 
 ## Features
 
+- **Deployable Output**: Packages successful builds as `.pkg`/`.mpkg` installers ready to push out via Jamf, Munki, or your MDM of choice
 - **Automated Port Building**: Builds MacPorts packages from a curated list
 - **Intelligent Failure Handling**: Automatically skips problematic ports and continues building
 - **Build Attempt Tracking**: Limits builds to 3 attempts per 24 hours to prevent resource waste
