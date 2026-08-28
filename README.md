@@ -186,5 +186,5 @@ Before committing changes to scripts, test them locally or in a test workflow ru
 
 ## License
 
-See repository license for details.
+Licensed under the [Apache License 2.0](LICENSE). Copyright © 2026 Chris Zavala (zavalalabs).
 
