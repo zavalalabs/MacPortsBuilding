@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Verify architecture
         run: |
@@ -87,10 +87,11 @@ jobs:
             exit 0
           fi
 
-      - name: Build packages
+      - name: Build installer package
         if: steps.check_attempts.outputs.can_build == 'true' && steps.build_archives.outputs.build_status == 'success'
         run: |
           export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+          export INSTALLER_VERSION="$(date +%Y.%m.%d).${{ github.run_number }}"
           chmod +x scripts/build_pkgs.sh
           ./scripts/build_pkgs.sh
         continue-on-error: true
@@ -134,7 +135,15 @@ jobs:
             skipped_count=$(grep -vE '^\s*(#|$)' problematic_ports.txt | wc -l | tr -d ' ')
             echo "- **Problematic Ports (skipped)**: $skipped_count" >> build_summary.md
           fi
-          
+
+          if compgen -G "installer/*.pkg" > /dev/null; then
+            echo "" >> build_summary.md
+            echo "### 📦 Installer" >> build_summary.md
+            for f in installer/*.pkg; do
+              echo "- \`$(basename "$f")\` ($(du -h "$f" | cut -f1))" >> build_summary.md
+            done
+          fi
+
           # Add summary to GitHub step summary
           cat build_summary.md >> $GITHUB_STEP_SUMMARY
 
@@ -161,7 +170,7 @@ jobs:
           }
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: macports-build-arm64-${{ github.run_number }}
           path: |
@@ -171,12 +180,11 @@ jobs:
             build_attempts.json
             issue_body.md
             *.log
-            archives/
-            packages/
+            installer/
         if: always()
 
       - name: Upload failed ports log
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: failed-ports-arm64
           path: failed_ports.log
@@ -223,7 +231,7 @@ jobs:
     
     steps:
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         
       - name: Create final summary
         run: |
@@ -242,7 +250,7 @@ jobs:
           done
           
       - name: Upload final summary
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: build-report-${{ github.run_number }}
           path: final_summary.md

@@ -4,11 +4,11 @@
 
 Still a Mac admin dealing with MacPorts because Homebrew isn't in the cards — SIP-locked fleets, no per-user `/usr/local` Cellar, or legacy ports (old Perl/Python builds, X11 tooling, TeX Live) that Homebrew dropped years ago? Need to package that stuff instead of compiling it by hand on every machine? This is for you.
 
-`MacPortsBuilding` is a GitHub Actions pipeline that builds a curated list of MacPorts packages on ARM64 macOS and turns them into deployable `.pkg`/`.mpkg` installers — so the compile pain (looking at you, `gcc14`, `qt5`, `ffmpeg`) happens once in CI, not on every managed Mac in your fleet. It tracks which ports are currently broken, skips them automatically on future runs, and stops itself (with a GitHub issue) instead of silently burning runner minutes when something's systemically wrong.
+`MacPortsBuilding` is a GitHub Actions pipeline that builds a curated list of MacPorts packages on ARM64 macOS and turns them into a single deployable `.pkg` installer — so the compile pain (looking at you, `gcc14`, `qt5`, `ffmpeg`) happens once in CI, not on every managed Mac in your fleet. It tracks which ports are currently broken, skips them automatically on future runs, and stops itself (with a GitHub issue) instead of silently burning runner minutes when something's systemically wrong.
 
 ## Features
 
-- **Deployable Output**: Packages successful builds as `.pkg`/`.mpkg` installers ready to push out via Jamf, Munki, or your MDM of choice
+- **Deployable Output**: Packages the entire built MacPorts prefix (base + every successfully-built port) as one self-contained, double-clickable `.pkg` installer ready to push out via Jamf, Munki, or your MDM of choice
 - **Automated Port Building**: Builds MacPorts packages from a curated list
 - **Intelligent Failure Handling**: Automatically skips problematic ports and continues building
 - **Build Attempt Tracking**: Limits builds to 3 attempts per 24 hours to prevent resource waste
@@ -54,6 +54,22 @@ Main build script that:
 - Captures new failures
 - Updates `problematic_ports.txt` automatically
 - Provides detailed build summary
+
+#### `scripts/build_pkgs.sh`
+Packaging script that runs after a successful `build_archives.sh` pass. Rather than
+using MacPorts' own `port pkg`/`port mpkg` targets per-port (which re-fetch each
+port's distfiles to rebuild a fresh destroot — unreliable in CI and produces one
+installer per port, not one for the whole set), it snapshots the already-built,
+already-activated `/opt/local` tree directly:
+1. `rsync`s `/opt/local` into a staging root, excluding MacPorts' own build
+   scratch space (`var/macports/{build,distfiles,sources,software,logs}`)
+2. `pkgbuild` turns that staged tree into a component package targeting `/`
+3. `productbuild` wraps it into a single distribution-style installer
+
+Output lands in `installer/MacPortsBuilding-AllPorts-arm64-<version>.pkg` — one
+unsigned, double-clickable installer covering MacPorts base plus every port
+built in that run. Unsigned means Gatekeeper requires right-click → Open (or
+`sudo installer -pkg ... -target /`) on first run.
 
 #### `scripts/track_build_attempts.sh`
 Build attempt tracking utility:
