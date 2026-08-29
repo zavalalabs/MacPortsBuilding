@@ -31,6 +31,13 @@ echo "Installing MacPorts from: $PKG_URL"
 curl -fsSL "$PKG_URL" -o /tmp/macports.pkg
 sudo installer -pkg /tmp/macports.pkg -target /
 
+# Disable rev-upgrade's automatic repair-on-install. By default MacPorts scans
+# for broken linkage and tries to auto-rebuild the offending port after every
+# single `port install`. If that rebuild fails (e.g. one bad port), every
+# subsequent, unrelated `port install` in the run fails too, since the repair
+# attempt runs first and its exit code poisons the whole command.
+echo "revupgrade_autorun no" | sudo tee -a /opt/local/etc/macports/macports.conf >/dev/null
+
 # Update ports tree
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 sudo port -N selfupdate
